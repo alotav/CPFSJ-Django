@@ -1,0 +1,113 @@
+<!-- HACEMOS HERENCIA DE PLANTILLA -->
+{% extends 'appbase/plantilla.html' %}
+
+{% block tittle %}
+    Dietas
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="divdieta">
+        <div>
+            <nav  style="width:100%">
+                <ul class="navar">
+                    {% for d in dieta %}
+                    {% if d.dia1 %}
+                    <div style="display:flex; align-items:center; text-align:left">
+                        <li >
+                            Dia 1
+                        </li>
+                        <li style="width:100%">
+                            <div style="display:flex; justify-content:center; text-align:left">
+                                <p>{{d.dia1|linebreaks}}</p>
+                            </div>
+                        </li>
+                    </div>
+                    {% endif %}
+
+                    {% if d.dia2 %}
+                    <div style="display:flex; align-items:center;">
+                        <li >
+                            Dia 2
+                        </li>
+                        <li style="width:100%">
+                            <div style="display:flex; justify-content:center; text-align:left">
+                                <p>{{d.dia2|linebreaks}}</p>
+                            </div>
+                        </li>
+                    </div>
+                    {% endif %}
+
+                    {% if d.dia3 %}
+                    <div style="display:flex; align-items:center;">
+                        <li >
+                            Dia 3
+                        </li>
+                        <li style="width:100%">
+                            <div style="display:flex; justify-content:center; text-align:left">
+                                <p>{{d.dia3|linebreaks}}</p>
+                            </div>
+                        </li>
+                    </div>
+                    {% endif %}
+
+                    {% if d.dia4 %}
+                    <div style="display:flex; align-items:center;">
+                        <li >
+                            Dia 4
+                        </li>
+                        <li style="width:100%">
+                            <div style="display:flex; justify-content:center; text-align:left">
+                                <p>{{d.dia4|linebreaks}}</p>
+                            </div>
+                        </li>
+                    </div>
+                    {% endif %}
+
+                    {% if d.dia5 %}
+                    <div style="display:flex; align-items:center;">
+                        <li >
+                            Dia 5
+                        </li>
+                        <li style="width:100%">
+                            <div style="display:flex; justify-content:center; text-align:left">
+                                <p>{{d.dia5|linebreaks}}</p>
+                            </div>
+                        </li>
+                    </div>
+                    {% endif %}
+
+                    {% if d.dia6 %}
+                    <div style="display:flex; align-items:center;">
+                        <li >
+                            Dia 6
+                        </li>
+                        <li style="width:100%">
+                            <div>
+                                <p>{{d.dia6|linebreaks}}</p>
+                            </div>
+                        </li>
+                    </div>
+                    {% endif %}
+
+                    {% if d.dia7 %}
+                    <div style="display:flex; align-items:center;">
+                        <li >
+                            Dia 7
+                        </li>
+                        <li style="width:100%">
+                            <div style="display:flex; justify-content:center; text-align:left">
+                                <p>{{d.dia7|linebreaks}}</p>
+                            </div>
+                        </li>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+        </nav>
+    </div>
+</div>
+
+
+{% endblock %}

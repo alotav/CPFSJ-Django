@@ -1,0 +1,40 @@
+<!--  cargamos carpeta static  -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- titulo pasado por plantilla -->
+    <title>{% block tittle %}{% endblock %} CPFSJ</title>
+    <link href="{% static 'appbase/CSS/style.css' %}" rel="stylesheet">
+</head>
+<body class="bodyplan">
+    <header>
+        <div class="div1">
+            <!-- Agregamos el nombre de usuario: -->
+            {% if user.is_authenticated %}
+                <h3>{{ user.username.upper }}</h3>
+            {% endif %}
+        </div>
+        <div class="div2">
+            <h3>
+                <a href="{% url 'home' %}" style="text-decoration:none; color:black;">Home</a>
+            </h3>
+        </div>
+        <div class="div3">
+            <h3><a href="{% url 'salir' %}" style="text-decoration:none; color:black;">Cerrar Sesion</a></h3>
+        </div>
+    </header>
+    
+    <!-- bloque de datos que se pasan por plantilla -->
+    {% block content %}{% endblock %}
+    <footer class="footer">
+            <h3>End of The World Dev</h3>
+            <p>Instagram</p>
+            <p>Linkedin</p>
+            <p>CV Online</p>
+    </footer>
+</body>
+</html>

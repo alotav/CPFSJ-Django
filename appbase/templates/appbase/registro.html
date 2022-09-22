@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'appbase/CSS/style.css' %}" rel="stylesheet">
+    <title>Registro</title>
+</head>
+<body class="bodyplan">
+    <nav class="navregistro">
+        <ul>
+            <li></li>
+            <li><a href="{% url 'acceder' %}">Acceder</a></li>
+            <li><a href="{% url 'registro' %}">Registrarse</a></li>
+        </ul>
+    </nav>
+    <div class="regcontainer">
+        {% block content %}
+
+        <form method="post" action="" autocomplete="off">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Crear cuenta</button>
+        </form>
+        {% endblock %}    
+    </div> 
+</body>
+</html>
