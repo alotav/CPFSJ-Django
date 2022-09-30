@@ -123,8 +123,6 @@ footer p{
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    /* background: url("/static/appbase/img/login.jpg"); */
-    /* background-color: rgba(255, 255, 255, 0.4);  */
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -150,7 +148,7 @@ div nav {
     background-color: rgba(255, 255, 255, 0.4);
     border: 1px solid;
     border-radius: 15px;
-    border-color: rgba(255, 255, 255, 0.4);;
+    border-color: rgba(255, 255, 255, 0.4);
     margin: 5vh;
     transition: 0.3s;
     color: black;
@@ -193,9 +191,8 @@ header {
 .div1 {
     display:flex;
     width: 30%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    flex-flow: column;
 }
 
 .div2 {
@@ -214,6 +211,7 @@ header {
     align-items: center;
     flex-flow: column;
 }
+.div1 h3 a,
 .div2 a,
 .div3 a{
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -222,6 +220,7 @@ header {
     border-radius: 15px;
     transition: 0.3s;
 }
+.div1 h3 a:hover,
 .div2 a:hover,
 .div3 a:hover{  
     color: rgba(255, 255, 255, 0.4);
@@ -337,8 +336,8 @@ header {
     width: 50%;
     text-align:center;
     margin: 0%;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background-color: rgba(255, 255, 255, 0.3);
+    /* border: 1px solid rgba(255, 255, 255, 0.4); */
+    /* background-color: rgba(255, 255, 255, 0.3); */
     border-radius: 15px;
     display: flex;
     text-align: left;
@@ -356,7 +355,6 @@ header {
 }
 
 .footer{
-    /* display: flex; */
     justify-content:center;
     background-color: rgba(74, 26, 26, 0.9);
     color:rgba(255, 255, 255, 0.3);
@@ -364,4 +362,72 @@ header {
     width: 100%;
     border: 1px solid rgb(184, 54, 54, 0.4);
     text-align: center;
+}
+
+
+/* PLAN */
+.infobasica ul{
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    color: grey;
+    list-style-type: none;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+}
+.infobasica li{
+    border: 1px solid rgb(184, 54, 54, 0.4);
+    padding: 1vh;
+    border-radius: 15px;
+    background-color: rgb(228, 255, 108);
+}
+.infoplan li{
+    width: 50%;
+    text-align: left;
+    padding-left: 50vh;
+    list-style: none;
+}
+.infoplan ul{
+    display: flex;
+    justify-content:space-around;
+    color: grey;
+}
+
+/* Control de ingresos */
+.control {
+    margin:auto;
+    margin-top: 25vh;
+    color: black;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 25%;
+    height: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .control div{
+    align-items: center;
+    justify-content:center;
+    
+} */
+.control form{
+    margin: 3vh;
+    margin-bottom: 1vh;
+}
+.control button{
+    margin-bottom: 1vh;
+}
+.control div h2{
+    display: flex;
+    justify-content: center;
+}
+
+.username {
+    color: rgb(214, 75, 36);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 1vh;
+    background-color: rgba(92, 37, 21, 0.962);
 }

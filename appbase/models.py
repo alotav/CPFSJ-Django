@@ -1,6 +1,7 @@
 from ast import Return
 from tabnanny import verbose
 from tkinter import CASCADE
+from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
@@ -54,3 +55,18 @@ class Dieta(models.Model):
         verbose_name = 'Dieta'
         verbose_name_plural = 'Dietas'
         ordering = ['id']
+
+class Plan(models.Model):
+    usr = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    dni = models.IntegerField(null=True, blank=False)
+    fecha_nacimiento = models.DateField(null=True, blank=True)
+    ocho = models.BooleanField(default=False, blank=True)
+    doce = models.BooleanField(default=False, blank=True)
+    full = models.BooleanField(default=False, blank=True)
+    f_pago = models.DateField()
+    f_vencimiento = models.DateField(null=True)
+    asistencia = models.IntegerField(null=False, default=0)
+
+    def __str__(self):
+        return (f'{self.usr}')
+

@@ -1,0 +1,21 @@
+{% extends 'appbase/plantilla.html' %}
+
+{% block tittle %}
+    Control
+{% endblock%}
+
+{% block content %}
+<div class="container">
+    <div class="control">
+        <div><h2>Control de Ingreso</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="number" name="dni" placeholder="Ingrese su DNI"> 
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock%}

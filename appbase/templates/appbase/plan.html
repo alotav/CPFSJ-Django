@@ -1,12 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'appbase/plantilla.html' %}
+
+{% block tittle %}
+    Plan
+{% endblock %}
+
+{% block content%}
+<div class="divplan">
+    <div class="infobasica">
+        <ul>
+            <li>usuario</li>
+            <li>Plan</li>
+            <li>x8</li>
+        </ul>
+    </div>
+    <div class="infoplan">
+        <div>
+            <ul>
+                <li>Fecha de pago</li>
+                <li>{{pago}}</li>
+            </ul>
+        </div>
+        <br>
+        <div>
+            <ul>
+                <li>Fecha de vencimiento</li>
+                <li>{{fecha_venc}}</li>
+            </ul>
+        </div>
+        <br>
+        <div>
+            <ul>
+                <li>Vencido</li>
+                <li>{{vencido}}</li>
+            </ul>
+        </div>
+        <br>
+        <div>
+            <ul>
+                <li>Clases disponibles</li>
+                <li>{{restantes}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

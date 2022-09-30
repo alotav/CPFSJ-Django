@@ -11,5 +11,6 @@ urlpatterns = [
     path('plan.html', views.plan, name='plan'),
     path('registro.html', views.VistaRegistro.as_view(), name="registro"),
     path('salir', views.cerrar_sesion, name="salir"),
+    path('control', views.control, name="control"),
 ]
 
