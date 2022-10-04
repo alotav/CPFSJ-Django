@@ -8,7 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- titulo pasado por plantilla -->
     <title>{% block tittle %}{% endblock %} CPFSJ</title>
+    
+     <!-- Bootstrap Local -->
+    <link href="{% static 'appbase/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    
     <link href="{% static 'appbase/CSS/style.css' %}" rel="stylesheet">
+
 </head>
 <body class="bodyplan">
     <header>
@@ -30,7 +35,23 @@
             <h3><a href="{% url 'salir' %}" style="text-decoration:none; color:black;">Cerrar Sesion</a></h3>
         </div>
     </header>
+
+        <!-- INTENTAMOS MOSTRAR ALERTAS FLASH  -->
     
+        {% if messages %}
+        <div>
+            
+            <div>
+                {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+        {% endif %}
+
     <!-- bloque de datos que se pasan por plantilla -->
     {% block content %}{% endblock %}
     <footer class="footer">

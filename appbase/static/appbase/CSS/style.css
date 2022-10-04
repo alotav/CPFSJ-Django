@@ -431,3 +431,10 @@ header {
     padding: 1vh;
     background-color: rgba(92, 37, 21, 0.962);
 }
+
+.mensajes {
+    width: 100%;
+    height:auto;
+    text-align: center;
+    background-color: green;
+}

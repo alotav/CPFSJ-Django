@@ -51,7 +51,7 @@ class Dieta(models.Model):
         return (f'{self.usr}')
 
     class Meta:
-        db_table = 'dieta'
+        db_table = 'appbase_dieta'
         verbose_name = 'Dieta'
         verbose_name_plural = 'Dietas'
         ordering = ['id']
@@ -63,7 +63,7 @@ class Plan(models.Model):
     ocho = models.BooleanField(default=False, blank=True)
     doce = models.BooleanField(default=False, blank=True)
     full = models.BooleanField(default=False, blank=True)
-    f_pago = models.DateField()
+    f_pago = models.DateField(default=False, blank=True)
     f_vencimiento = models.DateField(null=True)
     asistencia = models.IntegerField(null=False, default=0)
 

@@ -6,6 +6,15 @@
 
 {% block content %}
 <div class="container">
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}}">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+
     <div class="control">
         <div><h2>Control de Ingreso</h2>
             <form method="POST">

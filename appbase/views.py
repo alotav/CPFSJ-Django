@@ -1,10 +1,10 @@
 from contextvars import Context
 from dataclasses import asdict
-from multiprocessing import context
 from django.shortcuts import render, redirect
 from datetime import date, timedelta
-from django.http import HttpResponse
+
 from django.contrib import messages # para mostrar mensajes flash
+
 from django.contrib.auth import login, logout, authenticate # para manejar sesiones de usuarios registrados en DB
 # Importamos rutina para poder acceder a los datos de la dn a traves de una consulta ORM
 from .models import Rutina, Dieta, Plan,Usuario
@@ -37,15 +37,15 @@ class VistaRegistro(View):
             login(request, usuario)
             return redirect("home")
         else:
-            # recorremos los mensajes capturados por django
-            for msg in form.error_messages:
-                messages.error(request, form.error_messages[msg])
-                return render(request, "appbase/registro.html", {"form": form})
+            messages.error(request, 'Los datos son incorrectos!')
+            return render(request, "appbase/registro.html", {"form": form})
 
 def cerrar_sesion(request):
     logout(request)
     messages.success(request, f'Tu sesion se cerro correctamente')
     return redirect("acceder")
+
+
 
 def acceder(request):
     if request.method == "POST":
@@ -58,10 +58,11 @@ def acceder(request):
                 login(request, usuario)
                 messages.success(request, f"Bienvenido de nuevo {nombre_usuario}")
                 return redirect("home")
+
             else:
-                messages.error(request, "Los datos son incorrectos")
+                messages.error(request, "Los datos son incorrectos!")
         else:
-            messages.error(request, "Los datos son incorrectos")
+            messages.error(request, "Los datos son incorrectos!")
     # llamamos al formulario:
     form = AuthenticationForm()
     return render(request, "appbase/index.html", {"form": form})
@@ -99,57 +100,53 @@ def plan(request):
         id_usr = request.user.id
         print(f'ID Usuario {id_usr}')
         
-        # OBTENEMOS LOS REGISTROS PARA ESE USUARIO: SI NO TIENE REGISTROS DATA ERROR:
+        # OBTENEMOS LOS REGISTROS PARA ESE USUARIO: SI NO TIENE REGISTROS DARA ERROR:
         # EN CADA CONSULTA A LA DB AGREGAR TRY EXCEPT, MOSTRAR PLANTILLA VACIA, E INFORMAR POR POPUP
+        try:
+            planes = Plan.objects.filter(usr_id = id_usr)
+            # Filtramos fecha de pago, tipo plan y num asistencias y la pasamos como dict:
+            for p in planes:
+                ocho = p.ocho
+                doce = p.doce
+                full = p.full
+                asistencias = p.asistencia
+                pago = (p.f_pago)
+                print(type(asistencias))
+                print(f'Pago realizado {pago}')
+                vencimiento = pago + timedelta(days = 30)
+                # Actualizamos la BD con la fecha de vencimiento a traves de la foreignKey
+                Plan.objects.filter(usr_id = id_usr).update(f_vencimiento = vencimiento)
+                print (type(vencimiento))
+                print(type(date.today()))
+                # Pasamos el estado al front:
+                if date.today() > vencimiento:
+                    vencido = 'Si'
+                else:
+                    vencido = 'No'
 
-        planes = Plan.objects.filter(usr_id = id_usr)
-        # Filtramos fecha de pago, tipo plan y num asistencias y la pasamos como dict:
-        for p in planes:
-            ocho = p.ocho
-            doce = p.doce
-            full = p.full
-            asistencias = p.asistencia
-            pago = (p.f_pago)
-            print(type(asistencias))
-            print(f'Pago realizado {pago}')
-            vencimiento = pago + timedelta(days = 30)
-            # Actualizamos la BD con la fecha de vencimiento a traves de la foreignKey
-            Plan.objects.filter(usr_id = id_usr).update(f_vencimiento = vencimiento)
-            print (type(vencimiento))
-            print(type(date.today()))
-            # Pasamos el estado al front:
-            if date.today() > vencimiento:
-                vencido = 'Si'
-            else:
-                vencido = 'No'
+                # FILTRAR USUARIO!
+                if ocho == True: 
+                    ocho = 8
+                    restantes = ocho - asistencias
+                    print(restantes)
+                elif doce == True:
+                    doce = 12
+                    restantes = doce - asistencias
+                    print(restantes)
+                elif full == True:
+                    restantes = 'Full'
+                    print(restantes)
 
-            # FILTRAR USUARIO!
 
-            # def clases(plan1, plan2):
-            if ocho == True: 
-                ocho = 8
-                restantes = ocho - asistencias
-                print(restantes)
-                # return restantes
-            elif doce == True:
-                doce = 12
-                restantes = doce - asistencias
-                print(restantes)
-                # return restantes
-            elif full == True:
-                restantes = 'Full'
-                print(restantes)
-                # return restantes
+            return render(request, 'appbase/plan.html',{'f_pago': planes,'pago':pago,'vencido':vencido,'fecha_venc': vencimiento,'restantes': restantes,})
+        
+        except UnboundLocalError:
             
-            # clases_plan = clases(ocho,doce)
-            # if clases_plan == 8 | clases_plan == 12:
-            #     restantes = clases_plan - asistencias
-            #     return restantes
-            # else:
-            #     restantes = 'Full'
-            #     return restantes
-
-        return render(request, 'appbase/plan.html',{'f_pago': planes,'pago':pago,'vencido':vencido,'fecha_venc': vencimiento,'restantes': restantes,})
+            ########################################################################### FUNCIONO, LIMPIAR CODIGO Y ARREGLAR RESTO DE MENSAJES. ARREGLAR CON CSS !!!
+            #############################################################################
+            
+            messages.add_message(request, messages.ERROR, 'Aun no se cargaron los datos de tu plan.')
+            return redirect("home")
 
 def control(request):
     # Obtenemos el dni ingresado por formulario:
@@ -166,6 +163,7 @@ def control(request):
         print(lista_dni)
         if dni in lista_dni:
             print('Se encontro dni')
+            messages.add_message(request=request, level=messages.SUCCESS, message = 'Usuario Ingresado!')
             query = Plan.objects.filter(dni=dni)
             for q in query:
                 num_asistencia = q.asistencia

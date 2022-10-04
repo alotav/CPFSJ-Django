@@ -6,11 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <!-- linkeamos static -->
+    <!-- Bootstrap Local -->
+    <link href="{% static 'appbase/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        
     <link href="{% static 'appbase/CSS/style.css' %}" rel="stylesheet">
 </head>
 <body class="bhome">
+    
+    
+    <!-- INTENTAMOS MOSTRAR ALERTAS FLASH  -->
     <div class="container">
+        {% if messages %}
+        <div>
+            
+            <div>
+                {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+        {% endif %}
+    
+    
         <div class="rutinas comun">
                 <a href="rutinas.html" target="_self">RUTINAS</a>
         </div>
