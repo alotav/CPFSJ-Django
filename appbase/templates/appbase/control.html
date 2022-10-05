@@ -5,18 +5,10 @@
 {% endblock%}
 
 {% block content %}
-<div class="container">
-    
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{message.tags}}">
-                {{message}}
-            </div>
-        {% endfor %}
-    {% endif %}
+<div class="container-control">
 
     <div class="control">
-        <div><h2>Control de Ingreso</h2>
+        <div class="form-control"><h2>Control de Ingreso</h2>
             <form method="POST">
                 {% csrf_token %}
                 <input type="number" name="dni" placeholder="Ingrese su DNI"> 

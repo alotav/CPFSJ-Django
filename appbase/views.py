@@ -1,5 +1,5 @@
-from contextvars import Context
-from dataclasses import asdict
+# from contextvars import Context
+# from dataclasses import asdict
 from django.shortcuts import render, redirect
 from datetime import date, timedelta
 
@@ -83,16 +83,25 @@ def rutinas(request):
         print(f'User ID: {id_usuario}')
         # filtramos por medio del id. La variable usuario_id corresponde a la relacion de la db creada por el model:
         rutinas = Rutina.objects.filter(usuario_id = f'{id_usuario}')
-        print(rutinas)
-        return render(request, 'appbase/rutinas.html', {'rutinas':rutinas})
+        # VERIFICAMOS SI EL QUERYSET DEVUELVE DATOS EN LA BD:
+        print(len(rutinas.values_list()))
+        if (len(rutinas.values_list())) == 0:
+            messages.error(request, "Aun no se cargaron los datos de tu rutina.")
+            return redirect('home')
+        else:
+            return render(request, 'appbase/rutinas.html', {'rutinas':rutinas})
         
 
 def dietas(request):
     if User.is_authenticated:
         id_usr = request.user.id
         dieta = Dieta.objects.filter(usr_id = id_usr )
-        print(dieta)
-        return render(request, 'appbase/dietas.html', {'dieta': dieta})
+        print(len(dieta.values_list()))
+        if (len(dieta.values_list())) == 0:
+            messages.error(request, "Aun no se cargaron los datos de tu dieta.")
+            return redirect('home')
+        else:
+            return render(request, 'appbase/dietas.html', {'dieta': dieta})
 
 def plan(request):
     # Obtenemos el id para actualizar los registros:

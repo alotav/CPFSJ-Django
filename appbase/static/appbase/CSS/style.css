@@ -92,7 +92,7 @@ footer p{
 .comun {
     text-align: center;
     width: 100%;
-    height: 33.3%;
+    height: 33.4%;
     margin-top: 0px;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -182,7 +182,7 @@ header {
     display: flex;
     /* background-color: rgba(184, 54, 54, 0.683); */
     background-color: rgba(74, 26, 26, 0.9);
-    height: 15vh;
+    height: 12vh;
     width: 100%;
     border: 1px solid rgb(184, 54, 54, 0.4);
     /* border-radius: 20px; */
@@ -191,14 +191,14 @@ header {
 
 .div1 {
     display:flex;
-    width: 30%;
+    width: 50%;
     justify-content: space-around;
     align-items: center;
 }
 
 .div2 {
     display:flex;
-    width: 30%;
+    width: 25%;
     justify-content: center;
     align-items: center;
     flex-flow: column;
@@ -207,7 +207,7 @@ header {
 }
 .div3 {
     display:flex;
-    width: 30%;
+    width: 25%;
     justify-content: center;
     align-items: center;
     flex-flow: column;
@@ -217,7 +217,7 @@ header {
 .div3 a{
     border: 1px solid rgba(255, 255, 255, 0.4);
     background-color: rgba(255, 255, 255, 0.4);
-    padding: 1vh;
+    padding: 0.5vh;
     border-radius: 15px;
     transition: 0.3s;
 }
@@ -419,37 +419,75 @@ header {
 }
 
 /* Control de ingresos */
+
+.container-control{
+    background: url("/static/appbase/img/control.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    min-height: 100vh;
+}
 .control {
     margin:auto;
-    margin-top: 25vh;
+    padding-top: 25vh;
     color: black;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.3);
     width: 25%;
     height: auto;
     display:flex;
     justify-content: center;
     align-items: center;
 }
+.form-control{
+    color: black;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* height: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center; */
+}
+.form-control button{
+    height: 5vh;
+    cursor: pointer;
+    background-color: rgba(184, 54, 54, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.form-control button:hover{
+    background-color: rgb(184, 54, 54);
+}
+.form-control input{
+    height: 5vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+/* Quitamos los botones del input type number */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 .control form{
-    margin: 3vh;
     margin-bottom: 1vh;
 }
 .control button{
     margin-bottom: 1vh;
 }
-.control div h2{
+/* .control div h2{
     display: flex;
     justify-content: center;
-}
+} */
 
 .username {
     color: rgb(214, 75, 36);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 15px;
-    padding: 1vh;
+    padding: 0.5vh;
     background-color: rgba(92, 37, 21, 0.962);
 }
 

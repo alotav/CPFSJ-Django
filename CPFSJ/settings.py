@@ -129,7 +129,7 @@ STATIC_URL = 'static/'
 
 # RELACIONAMOS LOS ARCHIVOS DE LA CARPETA STATIC PARA PODER USAR BOOTSTRAP
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "appbase/static")
 ]
 
 # Default primary key field type

@@ -43,7 +43,7 @@
             
             <div>
                 {% for message in messages %}
-                    <div class="alert alert-{{message.tags}}">
+                    <div class="alert alert-{{message.tags}} mb-0 text-center">
                         {{message}}
                     </div>
                 {% endfor %}
@@ -56,7 +56,7 @@
         {% block content %}{% endblock %}
 
     <footer class="footer">
-            <h3>End of The World Dev</h3>
+            <h3>End of The World</h3>
             <p>Instagram</p>
             <p>Linkedin</p>
             <p>CV Online</p>
