@@ -124,21 +124,25 @@ def plan(request):
                 else:
                     vencido = 'No'
 
-                # FILTRAR USUARIO!
-                if ocho == True: 
+                # PLAN ELEGIDO:
+                if ocho == True:
                     ocho = 8
+                    plan = 'x 8'
                     restantes = ocho - asistencias
                     print(restantes)
+                    
+                    
                 elif doce == True:
                     doce = 12
+                    plan = 'x 12'
                     restantes = doce - asistencias
                     print(restantes)
                 elif full == True:
                     restantes = 'Full'
+                    plan = 'Full'
                     print(restantes)
 
-
-            return render(request, 'appbase/plan.html',{'f_pago': planes,'pago':pago,'vencido':vencido,'fecha_venc': vencimiento,'restantes': restantes,})
+            return render(request, 'appbase/plan.html',{'f_pago': planes,'pago':pago,'vencido':vencido,'fecha_venc': vencimiento,'restantes': restantes,'plan': plan,})
         
         except UnboundLocalError:
             

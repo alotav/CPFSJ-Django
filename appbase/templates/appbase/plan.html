@@ -6,41 +6,43 @@
 
 {% block content%}
 <div class="divplan">
-    <div class="infobasica">
-        <ul>
-            <li>usuario</li>
-            <li>Plan</li>
-            <li>x8</li>
-        </ul>
-    </div>
-    <div class="infoplan">
-        <div>
+    
+        <div class="infobasica">
             <ul>
-                <li>Fecha de pago</li>
-                <li>{{pago}}</li>
+                <li>Plan</li>
+                <li>{{plan}}</li>
             </ul>
         </div>
-        <br>
-        <div>
-            <ul>
-                <li>Fecha de vencimiento</li>
-                <li>{{fecha_venc}}</li>
-            </ul>
+
+        <div class="infoplan">
+            <div>
+                <ul>
+                    <li>Fecha de pago</li>
+                    <li>{{pago}}</li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li>Fecha de vencimiento</li>
+                    <li>{{fecha_venc}}</li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li>Vencido</li>
+                    <li>{{vencido}}</li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li>Clases disponibles</li>
+                    <li>{{restantes}}</li>
+                </ul>
+            </div>
         </div>
-        <br>
-        <div>
-            <ul>
-                <li>Vencido</li>
-                <li>{{vencido}}</li>
-            </ul>
-        </div>
-        <br>
-        <div>
-            <ul>
-                <li>Clases disponibles</li>
-                <li>{{restantes}}</li>
-            </ul>
-        </div>
-    </div>
+    
 </div>
 {% endblock %}

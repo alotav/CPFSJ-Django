@@ -7,124 +7,124 @@
 
 {% block content %}
 
-<div class="container">
-    <div id="divrutina">
+<div class="container divrutina">
+        <!-- <div id="divrutina"> -->
         <div>
-            <nav  style="width:100%">
-                <ul class="navar">
-                    {% for r in rutinas %}
+                <div>
+                    <nav  style="width:100%">
+                        <ul class="navar">
+                            {% for r in rutinas %}
 
-                    {% if r.activacion %}
-                    <div style="display:flex; align-items:center;">
-                        <li >
-                            Activacion
-                        </li>
-                        <li style="width:100%">
-                            <div class="detallerutina"  style="width:100%" >
-                                <!-- {% for rutina in rutinas %} -->
-                                <p>{{r.activacion|linebreaks}}</p>
-                                <!-- {% endfor %} -->
+                            {% if r.activacion %}
+                            <div style="display:flex; align-items:center;">
+                                <li >
+                                    Activacion
+                                </li>
+                                <li style="width:100%">
+                                    <div class="detallerutina"  style="width:100%" >
+                                        <!-- {% for rutina in rutinas %} -->
+                                        <p>{{r.activacion|linebreaks}}</p>
+                                        <!-- {% endfor %} -->
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    {% endif %}
-                    
-                    {% if r.dia1 %}
-                    <div style="display:flex; align-items:center;">
-                        <li >
-                            Dia 1
-                        </li>
-                        <li style="width:100%">
-                            <div class="detallerutina"  style="width:100%" >
-                                <p>{{r.dia1|linebreaks}}</p>
+                            {% endif %}
+                            
+                            {% if r.dia1 %}
+                            <div style="display:flex; align-items:center;">
+                                <li >
+                                    Dia 1
+                                </li>
+                                <li style="width:100%">
+                                    <div class="detallerutina"  style="width:100%" >
+                                        <p>{{r.dia1|linebreaks}}</p>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    {% endif %}
-                    
-                    {% if r.dia2 %}
-                    <div style="display:flex; align-items:center;">
-                        <li >
-                            Dia 2
-                        </li>
-                        <li style="width:100%">
-                            <div class="detallerutina"  style="width:100%" >
-                                <p>{{r.dia2|linebreaks}}</p>
+                            {% endif %}
+                            
+                            {% if r.dia2 %}
+                            <div style="display:flex; align-items:center;">
+                                <li >
+                                    Dia 2
+                                </li>
+                                <li style="width:100%">
+                                    <div class="detallerutina"  style="width:100%" >
+                                        <p>{{r.dia2|linebreaks}}</p>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    {% endif %}
+                            {% endif %}
 
-                    {% if r.dia3 %}
-                    <div style="display:flex; align-items:center;">
-                        <li >
-                            Dia 3
-                        </li>
-                        <li style="width:100%">
-                            <div class="detallerutina"  style="width:100%" >
-                                <p>{{r.dia3|linebreaks}}</p>
+                            {% if r.dia3 %}
+                            <div style="display:flex; align-items:center;">
+                                <li >
+                                    Dia 3
+                                </li>
+                                <li style="width:100%">
+                                    <div class="detallerutina"  style="width:100%" >
+                                        <p>{{r.dia3|linebreaks}}</p>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    {% endif %}
+                            {% endif %}
 
-                    {% if r.dia4 %}
-                    <div style="display:flex; align-items:center;">
-                        <li >
-                            Dia 4
-                        </li>
-                        <li style="width:100%">
-                            <div class="detallerutina"  style="width:100%" >
-                                <p>{{r.dia4|linebreaks}}</p>
+                            {% if r.dia4 %}
+                            <div style="display:flex; align-items:center;">
+                                <li >
+                                    Dia 4
+                                </li>
+                                <li style="width:100%">
+                                    <div class="detallerutina"  style="width:100%" >
+                                        <p>{{r.dia4|linebreaks}}</p>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    {% endif %}
+                            {% endif %}
 
-                    {% if r.dia5 %}
-                    <div style="display:flex; align-items:center;">
-                        <li >
-                            Dia 5
-                        </li>
-                        <li style="width:100%">
-                            <div class="detallerutina"  style="width:100%" >
-                                <p>{{r.dia5|linebreaks}}</p>
+                            {% if r.dia5 %}
+                            <div style="display:flex; align-items:center;">
+                                <li >
+                                    Dia 5
+                                </li>
+                                <li style="width:100%">
+                                    <div class="detallerutina"  style="width:100%" >
+                                        <p>{{r.dia5|linebreaks}}</p>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    {% endif %}
+                            {% endif %}
 
-                    {% if r.dia6 %}
-                    <div style="display:flex; align-items:center;">
-                        <li >
-                            Dia 6
-                        </li>
-                        <li style="width:100%">
-                            <div class="detallerutina"  style="width:100%" >
-                                <p>{{r.dia6|linebreaks}}</p>
+                            {% if r.dia6 %}
+                            <div style="display:flex; align-items:center;">
+                                <li >
+                                    Dia 6
+                                </li>
+                                <li style="width:100%">
+                                    <div class="detallerutina"  style="width:100%" >
+                                        <p>{{r.dia6|linebreaks}}</p>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    {% endif %}
+                            {% endif %}
 
-                    {% if r.dia7 %}
-                    <div style="display:flex; align-items:center;">
-                        <li >
-                            Dia 7
-                        </li>
-                        <li style="width:100%">
-                            <div class="detallerutina"  style="width:100%" >
-                                <p>{{r.dia7|linebreaks}}</p>
+                            {% if r.dia7 %}
+                            <div style="display:flex; align-items:center;">
+                                <li >
+                                    Dia 7
+                                </li>
+                                <li style="width:100%">
+                                    <div class="detallerutina"  style="width:100%" >
+                                        <p>{{r.dia7|linebreaks}}</p>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
+                            {% endif %}
+                            {% endfor %}
 
-                </ul>
-        </nav>
-    </div>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
 </div>
-
-
 {% endblock %}

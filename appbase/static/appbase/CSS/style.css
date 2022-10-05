@@ -61,7 +61,11 @@ footer p{
 
 /* tamano del div principal */
 .container {
+    max-width: inherit;
     height: 105vh;
+    margin: 0% !important;
+    margin-right: 0% !important;
+    padding: 0 0 0 0;
 }
 
 .rutinas {
@@ -88,7 +92,7 @@ footer p{
 .comun {
     text-align: center;
     width: 100%;
-    height: 30%;
+    height: 33.3%;
     margin-top: 0px;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -114,19 +118,22 @@ footer p{
     transition: 0.3s;
 }
 
-/* DIETAS */
+/* RUTINAS */
 
 .divrutina {
+    background: url("/static/appbase/img/rutina.jpg"), grey;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    min-height: 105vh;
+
     display:block;
     width: 100%;
     height: auto;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-
 }
 
 div nav {
@@ -161,7 +168,6 @@ div nav {
 
 /* PLANTILLA */
 
-.bodyplan,
 .bodyindex {
     background: url("/static/appbase/img/login.jpg"), grey;
     background-repeat: no-repeat;
@@ -172,7 +178,6 @@ div nav {
 }
 
 
-
 header { 
     display: flex;
     /* background-color: rgba(184, 54, 54, 0.683); */
@@ -181,11 +186,7 @@ header {
     width: 100%;
     border: 1px solid rgb(184, 54, 54, 0.4);
     /* border-radius: 20px; */
-    justify-content: space-between;
-
-    
-    /* color:rgba(255, 255, 255, 0.3); */
-    
+    justify-content: space-between;    
 }
 
 .div1 {
@@ -279,7 +280,7 @@ header {
 }
 .logcontainer form button {
     display: grid;
-    height: 1.5rem;
+    height: 2rem;
     width: 100%;
     background-color: rgba(184, 54, 54, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -314,6 +315,7 @@ header {
     align-items: center;
     height: 3rem;
     border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
 }
 .navlogin a,
 .navregistro a {
@@ -352,6 +354,15 @@ header {
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: 100%;
+    background-attachment: fixed;
+/* PRUEBA */
+    display:block;
+    width: 100%;
+    min-height: 105vh;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 .footer{
@@ -366,6 +377,15 @@ header {
 
 
 /* PLAN */
+
+.divplan {
+    background: url("/static/appbase/img/plan.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 70vh;
+}
+
 .infobasica ul{
     display: flex;
     justify-content: space-around;
@@ -373,7 +393,7 @@ header {
     color: grey;
     list-style-type: none;
     margin-bottom: 5vh;
-    margin-top: 5vh;
+    padding-top: 5vh;
 }
 .infobasica li{
     border: 1px solid rgb(184, 54, 54, 0.4);
@@ -382,9 +402,14 @@ header {
     background-color: rgb(228, 255, 108);
 }
 .infoplan li{
-    width: 50%;
-    text-align: left;
-    padding-left: 50vh;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    text-align: center;
+    border-radius: 15px;
+    width: 40%;
+    /* text-align: left; */
+    /* padding-left: 40vh; */
     list-style: none;
 }
 .infoplan ul{
@@ -407,11 +432,7 @@ header {
     justify-content: center;
     align-items: center;
 }
-/* .control div{
-    align-items: center;
-    justify-content:center;
-    
-} */
+
 .control form{
     margin: 3vh;
     margin-bottom: 1vh;
