@@ -169,11 +169,11 @@ div nav {
 /* PLANTILLA */
 
 .bodyindex {
-    background: url("/static/appbase/img/login.jpg"), grey;
+    background: url("/static/appbase/img/login.jpg"), rgb(211, 211, 211);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    background-blend-mode: multiply;
+    background-blend-mode:multiply;
     height: 100vh;
 }
 
@@ -234,16 +234,18 @@ header {
 /* REGISTRO DJANGO */
 .regcontainer,
 .logcontainer {
-    background: url("/static/appbase/img/login.jpg"),grey;
+    background: url("/static/appbase/img/login.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 105vh;
+    height: auto;
+    min-height: 105vh;
     background-color: rgb(58, 44, 44);
-    background-blend-mode: multiply;
+    background-blend-mode:overlay;
+    padding: 1vh;
 }
 .regcontainer form{
     background-color: rgba(255, 255, 255, 0.3);
@@ -308,7 +310,7 @@ header {
 .navregistro ul {
     list-style: none;
     text-decoration: none;
-    background-color: rgba(184, 54, 54, 0.6);
+    background-color: rgba(74, 26, 26, 0.9);
     margin: 0%;
     display: flex;
     justify-content: space-around;
@@ -396,10 +398,15 @@ header {
     padding-top: 5vh;
 }
 .infobasica li{
-    border: 1px solid rgb(184, 54, 54, 0.4);
+    /* border: 1px solid rgb(184, 54, 54, 0.4);
     padding: 1vh;
     border-radius: 15px;
-    background-color: rgb(228, 255, 108);
+    background-color: rgb(228, 255, 108); */
+    color: rgb(214, 75, 36);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 0.5vh 4vh 0.5vh 4vh;
+    background-color: rgba(92, 37, 21, 0.962);
 }
 .infoplan li{
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -412,6 +419,7 @@ header {
     /* padding-left: 40vh; */
     list-style: none;
 }
+
 .infoplan ul{
     display: flex;
     justify-content:space-around;
@@ -448,7 +456,7 @@ header {
     align-items: center; */
 }
 .form-control button{
-    height: 5vh;
+    height: auto;
     cursor: pointer;
     background-color: rgba(184, 54, 54, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -459,8 +467,8 @@ header {
     background-color: rgb(184, 54, 54);
 }
 .form-control input{
-    height: 5vh;
-    background-color: rgba(255, 255, 255, 0.3);
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.763);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 4px;
 }

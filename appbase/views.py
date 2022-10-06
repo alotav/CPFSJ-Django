@@ -130,8 +130,10 @@ def plan(request):
                 # Pasamos el estado al front:
                 if date.today() > vencimiento:
                     vencido = 'Si'
+                    print(vencido)
                 else:
                     vencido = 'No'
+                    print(vencido)
 
                 # PLAN ELEGIDO:
                 if ocho == True:
@@ -139,6 +141,9 @@ def plan(request):
                     plan = 'x 8'
                     restantes = ocho - asistencias
                     print(restantes)
+                    if restantes < 0:
+                        restantes = 0
+                        print(restantes)
                     
                     
                 elif doce == True:
@@ -146,6 +151,9 @@ def plan(request):
                     plan = 'x 12'
                     restantes = doce - asistencias
                     print(restantes)
+                    if restantes < 0:
+                        restantes = 0
+                        print(restantes)
                 elif full == True:
                     restantes = 'Full'
                     plan = 'Full'
@@ -154,10 +162,6 @@ def plan(request):
             return render(request, 'appbase/plan.html',{'f_pago': planes,'pago':pago,'vencido':vencido,'fecha_venc': vencimiento,'restantes': restantes,'plan': plan,})
         
         except UnboundLocalError:
-            
-            ########################################################################### FUNCIONO, LIMPIAR CODIGO Y ARREGLAR RESTO DE MENSAJES. ARREGLAR CON CSS !!!
-            #############################################################################
-            
             messages.add_message(request, messages.ERROR, 'Aun no se cargaron los datos de tu plan.')
             return redirect("home")
 

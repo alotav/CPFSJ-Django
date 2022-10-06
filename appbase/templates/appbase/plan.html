@@ -32,7 +32,17 @@
             <div>
                 <ul>
                     <li>Vencido</li>
-                    <li>{{vencido}}</li>
+                    
+                    {% if vencido == 'Si' %}
+                    <li" class ="if_li" style="background-color: rgb(236, 128, 125); width: 40%; border-radius: 15px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.4); color: black;">
+                                {{vencido}}
+                        </li>
+                    {% else %}
+                        <li" class ="if_li" style="background-color: rgb(122, 227, 122); width: 40%; border-radius: 15px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.4); color: black;">
+                            {{vencido}}
+                        </li>
+                    {% endif %}
+                    
                 </ul>
             </div>
 
