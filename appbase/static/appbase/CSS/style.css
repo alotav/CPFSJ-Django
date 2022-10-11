@@ -212,22 +212,26 @@ header {
     align-items: center;
     flex-flow: column;
 }
-.div1 h3 a,
+.div1 a,
 .div2 a,
 .div3 a{
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* border: 1px solid rgba(255, 255, 255, 0.4); */
     background-color: rgba(255, 255, 255, 0.4);
     padding: 0.5vh;
-    border-radius: 15px;
-    transition: 0.3s;
+    border-radius: 10px;
+    /* transition: 0.3s; */
+
+    
+    box-shadow: 3px 3px 4px 0px rgba(203, 203, 196, 0.67);
+    transition: 0.4s;
 }
-.div1 h3 a:hover,
+.div1 h5 a:hover,
 .div2 a:hover,
 .div3 a:hover{  
     color: rgba(255, 255, 255, 0.4);
-    background-color: rgba(184, 54, 54, 0.683);
     cursor: pointer;
-    transition: 0.3s;
+    background-color: rgb(102, 98, 98);
+    box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67);
 }
 
 
@@ -319,20 +323,23 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 3px;
 }
+
 .navlogin a,
 .navregistro a {
     padding: 3px;
     background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* border: 1px solid rgba(255, 255, 255, 0.4); */
     border-radius: 3px;
     text-decoration: none;
     color: #000;
-    transition: 0.3s;
+    box-shadow: 3px 3px 4px 0px rgba(203, 203, 196, 0.67);
+    transition: 0.4s;
 }
 .navregistro a:hover,
 .navlogin a:hover {
-    background-color: rgb(184, 54, 54);
-    transition: 0.3s;
+    background-color: rgb(102, 98, 98);
+    /* box-shadow: -3px -3px 4px 0px rgba(236, 233, 73, 0.67); */
+    box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67);
 }
 
 .detallerutina{

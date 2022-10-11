@@ -20,19 +20,19 @@
         <div class="div1">
             <!-- Agregamos el nombre de usuario: -->
             {% if user.is_authenticated %}
-                <h3 class="username">{{ user.username.upper }}</h3>
+                <h5 class="username">{{ user.username.upper }}</h5>
             {% endif %}
             {% if user.is_staff %}
-                <h3><a href="{% url 'control' %}" style="text-decoration:none; color:black;">Control de Ingresos</a></h3>
+                <h5><a href="{% url 'control' %}" style="text-decoration:none; color:black;">Control de Ingresos</a></h4>
             {% endif %}
         </div>
         <div class="div2">
-            <h3>
+            <h5>
                 <a href="{% url 'home' %}" style="text-decoration:none; color:black;">Home</a>
-            </h3>
+            </h5>
         </div>
         <div class="div3">
-            <h3><a href="{% url 'salir' %}" style="text-decoration:none; color:black;">Cerrar Sesion</a></h3>
+            <h5><a href="{% url 'salir' %}" style="text-decoration:none; color:black;">Cerrar Sesion</a></h5>
         </div>
     </header>
 
