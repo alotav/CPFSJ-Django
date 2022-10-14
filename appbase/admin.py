@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 
 # ACA VAMOS A REGISTRAR LOS MODELS PARA QUE APAREZCAN EN EL PANEL ADMIN
-from .models import Dieta, Rutina, Usuario, Dieta, Plan
+from .models import Dieta, Rutina, RutinaSemanal, Usuario, Dieta, Plan
 
 # Creamos una clase que hereda de los modelos para indicar que queremos mostrar en el panel admin: REGISTRAR LA CLASE ABAJO!
 class ClientesAdmin(admin.ModelAdmin):
@@ -21,3 +21,4 @@ admin.site.register(Usuario, ClientesAdmin)
 admin.site.register(Rutina)
 admin.site.register(Dieta, DietaAdmin)
 admin.site.register(Plan)
+admin.site.register(RutinaSemanal)

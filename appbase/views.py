@@ -1,13 +1,13 @@
 # from contextvars import Context
 # from dataclasses import asdict
 from django.shortcuts import render, redirect
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 from django.contrib import messages # para mostrar mensajes flash
 
 from django.contrib.auth import login, logout, authenticate # para manejar sesiones de usuarios registrados en DB
 # Importamos rutina para poder acceder a los datos de la dn a traves de una consulta ORM
-from .models import Rutina, Dieta, Plan,Usuario
+from .models import Rutina, Dieta, Plan,Usuario, RutinaSemanal
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -73,7 +73,95 @@ def index(request):
     return render(request,'appbase/index.html')
 
 def home(request):
-    return render(request,'appbase/home.html')
+    if User.is_authenticated:
+        id_usuario = request.user.id
+        print(f'User ID: {id_usuario}')
+        consulta_planificacion = RutinaSemanal.objects.filter(usuario_id = id_usuario)
+        for consulta in reversed(consulta_planificacion):
+            f_planificacion = consulta.created
+            print(f_planificacion)
+            
+            # CALCULAMOS LAFECHA DE VTO DEL PLAN:
+            
+            if consulta.semana8:
+                delta = 56
+            elif consulta.semana7:
+                delta = 49
+            elif consulta.semana6:
+                delta = 42
+            elif consulta.semana5:
+                delta = 35
+            elif consulta.semana4:
+                delta = 28
+            elif consulta.semana3:
+                delta = 21
+            elif consulta.semana2:
+                delta = 14
+            elif consulta.semana1:
+                delta = 7
+
+
+            fecha_vto = f_planificacion + timedelta(days = delta)
+            print(fecha_vto)
+            RutinaSemanal.objects.filter(usuario_id = id_usuario).update(f_vencimiento = fecha_vto)
+            
+            # ENVIAMOS MENSAJE DE ALERTA 5 DIAS ANTES DEL VENCIMIENTO:
+            dia_actual = datetime.now()
+            print(dia_actual)
+
+            # Quitamos la zona horaria que molesta para obtener la diferencia de dias
+            # Tambien quitamos la hora al dia_actual, y obtenemos solo la fecha de ambos.
+            fecha_vto = str(fecha_vto)
+            fecha_vto_limpia = fecha_vto.split(' ')
+            fecha_vto_limpia = fecha_vto_limpia[0]
+            fecha_vto_limpia = fecha_vto_limpia.split('-')
+            anio = int(fecha_vto_limpia[0])
+            mes = int(fecha_vto_limpia[1])
+            dia = int(fecha_vto_limpia[2])
+
+            fecha_vto_limpia = date(anio,mes,dia)
+            print (f'Fecha_vto limpia: {fecha_vto_limpia}')
+            print (f'Fecha_vto limpia: {type(fecha_vto_limpia)}')
+
+
+            dia_actual = str(dia_actual)
+            dia_actual_limpio = dia_actual.split(' ')
+            dia_actual_limpio = dia_actual_limpio[0]
+            dia_actual_limpio = dia_actual_limpio.split('-')
+            anio = int(dia_actual_limpio[0])
+            mes = int(dia_actual_limpio[1])
+            dia = int(dia_actual_limpio[2])
+            
+            dia_actual_limpio = date(anio,mes,dia)
+            print (f'Fecha_actual limpia: {dia_actual_limpio}')
+            print (f'Fecha_actual limpia: {type(dia_actual_limpio)}')
+
+            diferencia = dia_actual_limpio - fecha_vto_limpia
+            print(diferencia)
+            # Pasamos los dias a entero:
+            diferencia = str(diferencia)
+            diferencia = diferencia.split(' ')
+            diferencia = int(diferencia[0])
+            print(diferencia)
+
+            # AGREGAMOS MENSAJES PARA FECHA CERCANA AL VENCIMIENTO Y PARA PLANIFICACION VENCIDA:
+
+            if diferencia > -5 and diferencia < 0:
+                messages.warning(request, 'Tu planificacion esta por vencer')
+            elif diferencia >= 0:
+                messages.warning(request, 'Tu planificacion esta vendica')
+                
+        return render(request,'appbase/home.html')
+
+        #  AGREGAR ALERTA SI EL USUARIO ES ADMIN INDICANDO PLANIFICACIONES POR VENCER
+        #  AGREGAR PANEL QUE MUESTRE LISTADO DE PLANIFICACIONES POR VENCER SOLO ADMIN
+        #
+        #
+        #
+
+
+
+
 
 def rutinas(request):
     if User.is_authenticated:
@@ -90,7 +178,30 @@ def rutinas(request):
             return redirect('home')
         else:
             return render(request, 'appbase/rutinas.html', {'rutinas':rutinas})
-        
+
+
+
+
+def tipo_rutina(request):
+    return render(request, 'appbase/tipo_rutina.html')
+
+
+
+def rutina_semanal(request):
+    if User.is_authenticated:
+        id_usuario = request.user.id
+        # Imprimimos por consola id:
+        print(f'User ID: {id_usuario}')
+        # filtramos por medio del id. La variable usuario_id corresponde a la relacion de la db creada por el model:
+        rutina_semanal = RutinaSemanal.objects.filter(usuario_id = f'{id_usuario}')
+        # VERIFICAMOS SI EL QUERYSET DEVUELVE DATOS EN LA BD:
+        print(len(rutina_semanal.values_list()))
+        if (len(rutina_semanal.values_list())) == 0:
+            messages.error(request, "Aun no se cargaron los datos de tu rutina.")
+            return redirect('planificacion')
+        else:
+            return render(request, 'appbase/rutina_semanal.html', {'rutina_semanal':rutina_semanal})
+
 
 def dietas(request):
     if User.is_authenticated:

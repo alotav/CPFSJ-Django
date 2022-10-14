@@ -1,0 +1,16 @@
+{% extends 'appbase/plantilla.html' %}
+
+{% block content %}
+
+<div class="container_planificacion" >
+
+    <div class="diaria com">
+            <a href="rutinas.html" target="_self">PLANIFICACION DIARIA</a>
+    </div>
+    <div class="semanal com">
+            <a href="{% url 'planificacion_semanal' %}" target="_self">PLANIFICACION SEMANAL</a>
+    </div>
+
+</div>
+
+{% endblock %}

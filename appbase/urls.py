@@ -12,5 +12,7 @@ urlpatterns = [
     path('registro.html', views.VistaRegistro.as_view(), name="registro"),
     path('salir', views.cerrar_sesion, name="salir"),
     path('control', views.control, name="control"),
+    path('planificacion', views.tipo_rutina, name="planificacion"),
+    path('planificacion_semanal', views.rutina_semanal, name="planificacion_semanal")
 ]
 

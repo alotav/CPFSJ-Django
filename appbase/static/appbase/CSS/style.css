@@ -136,6 +136,70 @@ footer p{
     height: 100%;
 }
 
+
+/* PLANIFICACION */
+.container_planificacion{
+    height:auto;
+}
+
+.diaria{
+    background: url("/static/appbase/img/rutina.jpg"), grey;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    min-height: auto;
+
+    display:block;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height: 50vh;
+}
+
+.semanal{
+    background: url("/static/appbase/img/rutina.jpg"), grey;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    min-height: auto;
+
+    display:block;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height: 50vh;
+}
+
+.semanal a,
+.diaria a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7vh;
+    letter-spacing: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    /* ancho del 100% de su contenedor */
+    height: 100%;
+    width: 100%;
+}
+
+.com :hover{
+    background-color: rgba(255, 255, 255, 0.4);  
+    transition: 0.3s;
+}
+
+
+/* NAV */
+
 div nav {
     width: 25%;
     height: 50%;
@@ -164,6 +228,11 @@ div nav {
     background-color: rgba(184, 54, 54, 0.683);
     cursor: pointer;
 }
+
+
+
+
+
 
 
 /* PLANTILLA */

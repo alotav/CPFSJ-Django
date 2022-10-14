@@ -19,6 +19,8 @@ class Usuario(models.Model):
     def __str__(self):
         return (f"{self.nombre}  {self.apellido}")
 
+
+# PLANIFICACION DIARIA:
 class Rutina(models.Model):
     # Creamos la relacion entre rutinas tabla usuario django Auth_User que importamos arrriba:
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
@@ -35,6 +37,27 @@ class Rutina(models.Model):
     def __str__(self):
         return (f'{self.usuario}')
     
+# AGREGAMOS MODEL PLANIFICACIONES POR SEMANA:
+class RutinaSemanal(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    activacion = models.TextField(max_length=500,blank=True)
+    semana1 = models.TextField(max_length=500,blank=True)
+    semana2 = models.TextField(max_length=500,blank=True)
+    semana3 = models.TextField(max_length=500,blank=True)
+    semana4 = models.TextField(max_length=500,blank=True)
+    semana5 = models.TextField(max_length=500,blank=True)
+    semana6 = models.TextField(max_length=500,blank=True)
+    semana7 = models.TextField(max_length=500,blank=True)
+    semana8 = models.TextField(max_length=500,blank=True)
+    created=models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated=models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    f_vencimiento = models.DateField(null=True, blank=True)
+    
+    def __str__(self):
+        return (f'{self.usuario}')
+
+
+
 class Dieta(models.Model):
     # Creamos la relacion entre rutinas tabla usuario django Auth_User que importamos arrriba:
     usr = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)

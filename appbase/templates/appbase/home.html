@@ -19,24 +19,10 @@
     {% block content %}
     <!-- INTENTAMOS MOSTRAR ALERTAS FLASH  -->
     <div class="container" >
-
-        <!-- {% if messages %}
-        <div>
-            
-            <div>
-                {% for message in messages %}
-                    <div class="alert alert-{{message.tags}} mb-0 text-center">
-                        {{message}}
-                    </div>
-                {% endfor %}
-            </div>
-            
-        </div>
-        {% endif %} -->
-    
+   
     
         <div class="rutinas comun">
-                <a href="rutinas.html" target="_self">RUTINAS</a>
+                <a href="{% url 'planificacion' %}" target="_self">RUTINAS</a>
         </div>
         <div class="dietas comun">
                 <a href="dietas.html" target="_self">DIETAS</a>
