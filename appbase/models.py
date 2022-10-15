@@ -1,4 +1,5 @@
 from ast import Return
+from email.policy import default
 from tabnanny import verbose
 from tkinter import CASCADE
 from unittest.util import _MAX_LENGTH
@@ -52,7 +53,8 @@ class RutinaSemanal(models.Model):
     created=models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated=models.DateTimeField(auto_now_add=True, null=True, blank=True)
     f_vencimiento = models.DateField(null=True, blank=True)
-    
+    cerca_vto = models.BooleanField(default=False)
+
     def __str__(self):
         return (f'{self.usuario}')
 

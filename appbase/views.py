@@ -72,8 +72,50 @@ def acceder(request):
 def index(request):
     return render(request,'appbase/index.html')
 
+
+
+
+
+# 
+def ctrl_planificacion(request):
+        if User.is_authenticated:
+        # Verificamos si el usuario es admin:
+            if User.is_staff:
+                datos_rsemanal = RutinaSemanal.objects.all()
+                datos_users = User.objects.all()
+                for datos in datos_rsemanal:
+                    # si estan vencidos obtenemos los usuarios:
+                    if datos.cerca_vto == True:
+                        print(f'{datos.usuario_id}')
+                        id_usuario = datos.usuario_id
+                        for user in datos_users:
+                            if user.id == id_usuario:
+                                print(f'Rutina vencida para usuario {user.username}')
+
+## SEGUIR DESDE ACA:
+
+                                # GUARDAR LOS DATOS DE ALGUNA FORMA Y PASARLO AL TEMPLATE COMO DICT
+            return render(request,'appbase/ctrl_planificacion.html')
+
+                
+
+
+
 def home(request):
-    if User.is_authenticated:
+    # if User.is_authenticated:
+    #     # Verificamos si el usuario es admin:
+    #     if User.is_staff:
+    #         datos_rsemanal = RutinaSemanal.objects.all()
+    #         datos_users = User.objects.all()
+    #         for datos in datos_rsemanal:
+    #             # si estan vencidos obtenemos los usuarios:
+    #             if datos.cerca_vto == True:
+    #                 print(f'{datos.usuario_id}')
+    #                 id_usuario = datos.usuario_id
+    #                 for user in datos_users:
+    #                     if user.id == id_usuario:
+    #                         print(f'Rutina vencida para usuario {user.username}')
+
         id_usuario = request.user.id
         print(f'User ID: {id_usuario}')
         consulta_planificacion = RutinaSemanal.objects.filter(usuario_id = id_usuario)
@@ -148,6 +190,7 @@ def home(request):
 
             if diferencia > -5 and diferencia < 0:
                 messages.warning(request, 'Tu planificacion esta por vencer')
+                RutinaSemanal.objects.filter(usuario_id = id_usuario).update(cerca_cto = True)
             elif diferencia >= 0:
                 messages.warning(request, 'Tu planificacion esta vendica')
                 
@@ -216,7 +259,7 @@ def dietas(request):
 
 def plan(request):
     # Obtenemos el id para actualizar los registros:
-    if User.is_authenticated:    
+    if User.is_authenticated:  
         id_usr = request.user.id
         print(f'ID Usuario {id_usr}')
         
