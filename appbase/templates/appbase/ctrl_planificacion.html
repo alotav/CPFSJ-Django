@@ -13,128 +13,16 @@
                 <div>
                     <nav  style="width:100%">
                         <ul class="navar">
-                            {% for r in rutina_semanal %}
 
-                            {% if r.activacion %}
-                            <div style="display:flex; align-items:center;">
+                            {% for usr in usr_vto %}
+                            <div style="display:flex; align-items:center; background-color:aqua;">
                                 <li >
-                                    Activacion
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <!-- {% for rutina in rutinas %} -->
-                                        <p>{{r.activacion|linebreaks}}</p>
-                                        <!-- {% endfor %} -->
-                                    </div>
+                                 {{usr}}
                                 </li>
                             </div>
-                            {% endif %}
-                            
-                            {% if r.semana1 %}
-                            <div style="display:flex; align-items:center;">
-                                <li >
-                                    Semana 1
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <p>{{r.semana1|linebreaks}}</p>
-                                    </div>
-                                </li>
-                            </div>
-                            {% endif %}
-                            
-                            {% if r.semana2 %}
-                            <div style="display:flex; align-items:center;">
-                                <li >
-                                    Semana 2
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <p>{{r.semana2|linebreaks}}</p>
-                                    </div>
-                                </li>
-                            </div>
-                            {% endif %}
-
-                            {% if r.semana3 %}
-                            <div style="display:flex; align-items:center;">
-                                <li >
-                                    Semana 3
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <p>{{r.semana3|linebreaks}}</p>
-                                    </div>
-                                </li>
-                            </div>
-                            {% endif %}
-
-                            {% if r.semana4 %}
-                            <div style="display:flex; align-items:center;">
-                                <li >
-                                    Semana 4
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <p>{{r.semana4|linebreaks}}</p>
-                                    </div>
-                                </li>
-                            </div>
-                            {% endif %}
-
-                            {% if r.semana5 %}
-                            <div style="display:flex; align-items:center;">
-                                <li >
-                                    Semana 5
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <p>{{r.semana5|linebreaks}}</p>
-                                    </div>
-                                </li>
-                            </div>
-                            {% endif %}
-
-                            {% if r.semana6 %}
-                            <div style="display:flex; align-items:center;">
-                                <li >
-                                    Semana 6
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <p>{{r.semana6|linebreaks}}</p>
-                                    </div>
-                                </li>
-                            </div>
-                            {% endif %}
-
-                            {% if r.semana7 %}
-                            <div style="display:flex; align-items:center;">
-                                <li >
-                                    Semana 7
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <p>{{r.semana7|linebreaks}}</p>
-                                    </div>
-                                </li>
-                            </div>
-                            {% endif %}
-
-                            {% if r.semana8 %}
-                            <div style="display:flex; align-items:center;">
-                                <li >
-                                    Semana 8
-                                </li>
-                                <li style="width:100%">
-                                    <div class="detallerutina"  style="width:100%" >
-                                        <p>{{r.semana8|linebreaks}}</p>
-                                    </div>
-                                </li>
-                            </div>
-                            {% endif %}
-
                             {% endfor %}
+
+
 
                         </ul>
                     </nav>

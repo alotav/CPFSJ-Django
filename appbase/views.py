@@ -74,28 +74,26 @@ def index(request):
 
 
 
-
-
-# 
 def ctrl_planificacion(request):
-        if User.is_authenticated:
+        # if User.is_authenticated:
         # Verificamos si el usuario es admin:
+            usr_cercavto = {}
             if User.is_staff:
                 datos_rsemanal = RutinaSemanal.objects.all()
                 datos_users = User.objects.all()
                 for datos in datos_rsemanal:
                     # si estan vencidos obtenemos los usuarios:
                     if datos.cerca_vto == True:
-                        print(f'{datos.usuario_id}')
+                        print(f'ID: {datos.usuario_id}')
                         id_usuario = datos.usuario_id
                         for user in datos_users:
                             if user.id == id_usuario:
-                                print(f'Rutina vencida para usuario {user.username}')
-
-## SEGUIR DESDE ACA:
-
-                                # GUARDAR LOS DATOS DE ALGUNA FORMA Y PASARLO AL TEMPLATE COMO DICT
-            return render(request,'appbase/ctrl_planificacion.html')
+                                # Pasamos por dict los vencimientos al view:
+                                usr_cercavto.update({user.username:user.username})
+                                print(usr_cercavto)
+                                print(f'Rutina por vencer. Usuario: {user.username}\n')
+                                
+            return render(request,'appbase/ctrl_planificacion.html', {'usr_vto': usr_cercavto})
 
                 
 
@@ -190,17 +188,20 @@ def home(request):
 
             if diferencia > -5 and diferencia < 0:
                 messages.warning(request, 'Tu planificacion esta por vencer')
-                RutinaSemanal.objects.filter(usuario_id = id_usuario).update(cerca_cto = True)
+                RutinaSemanal.objects.filter(usuario_id = id_usuario).update(cerca_vto = True)
             elif diferencia >= 0:
                 messages.warning(request, 'Tu planificacion esta vendica')
-                
+
+            # Si el usr es admin, recorremos todas las rutinas cerca del vto:
+            if User.is_staff:
+                datos_rsemanal = RutinaSemanal.objects.all()                        
+                if consulta.cerca_vto == True:
+                    print(consulta)
+                    messages.warning(request, 'Hay planificaciones cerca de vencimiento!')
+                    break
+
         return render(request,'appbase/home.html')
 
-        #  AGREGAR ALERTA SI EL USUARIO ES ADMIN INDICANDO PLANIFICACIONES POR VENCER
-        #  AGREGAR PANEL QUE MUESTRE LISTADO DE PLANIFICACIONES POR VENCER SOLO ADMIN
-        #
-        #
-        #
 
 
 
