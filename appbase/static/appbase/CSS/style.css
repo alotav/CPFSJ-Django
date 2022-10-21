@@ -302,6 +302,13 @@ header {
     background-color: rgb(102, 98, 98);
     box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67);
 }
+/* Si nos encontramos en la ruta especificada: */
+.activo{
+    color: rgba(255, 255, 255, 0.4) !important;
+    cursor: pointer !important;
+    background-color: rgb(102, 98, 98) !important;
+    box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67) !important;
+}
 
 
 /* REGISTRO DJANGO */
@@ -562,10 +569,6 @@ input[type=number]::-webkit-outer-spin-button {
 .control button{
     margin-bottom: 1vh;
 }
-/* .control div h2{
-    display: flex;
-    justify-content: center;
-} */
 
 .username {
     color: rgb(214, 75, 36);
@@ -580,4 +583,8 @@ input[type=number]::-webkit-outer-spin-button {
     height:auto;
     text-align: center;
     background-color: green;
+}
+
+.activo {
+    
 }

@@ -23,13 +23,13 @@
                 <h5 class="username">{{ user.username.upper }}</h5>
             {% endif %}
             {% if user.is_staff %}
-                <h5><a href="{% url 'control' %}" style="text-decoration:none; color:black;">Control de Ingresos</a></h5>
-                <h5><a href="{% url 'ctrl_planificacion' %}" style="text-decoration:none; color:black;">Planificaciones por vencer</a></h5>
+                <h5><a href="{% url 'control' %}" class="{% if request.path == '/control' %}activo{% endif %}" style="text-decoration:none; color:black;">Control de Ingresos</a></h5>
+                <h5><a href="{% url 'ctrl_planificacion' %}" class="{% if request.path == '/ctrl_planificacion' %}activo{% endif %}" style="text-decoration:none; color:black;">Planificaciones por vencer</a></h5>
             {% endif %}
         </div>
         <div class="div2">
             <h5>
-                <a href="{% url 'home' %}" style="text-decoration:none; color:black;">Home</a>
+                <a href="{% url 'home' %}" class="{% if request.path == '/home.html' %}activo{% endif %}" style="text-decoration:none; color:black;">Home</a>
             </h5>
         </div>
         <div class="div3">
