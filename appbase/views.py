@@ -197,7 +197,7 @@ def home(request):
                 datos_rsemanal = RutinaSemanal.objects.all()                        
                 if consulta.cerca_vto == True:
                     print(consulta)
-                    messages.warning(request, 'Hay planificaciones cerca de vencimiento!')
+                    messages.warning(request, 'Hay planificaciones cerca del vencimiento!')
                     break
 
         return render(request,'appbase/home.html')

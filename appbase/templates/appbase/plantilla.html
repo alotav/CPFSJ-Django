@@ -20,20 +20,34 @@
         <div class="div1">
             <!-- Agregamos el nombre de usuario: -->
             {% if user.is_authenticated %}
-                <h5 class="username">{{ user.username.upper }}</h5>
+                <h6 class="username {% if request.path == '/planificacion' %}activo{% endif %} {% if request.path == '/rutinas.html' %}activo{% endif %} {% if request.path == '/dietas.html' %}activo{% endif %} {% if request.path == '/planificacion_semanal' %}activo{% endif %}">{{ user.username.upper }}</h6>
             {% endif %}
             {% if user.is_staff %}
-                <h5><a href="{% url 'control' %}" class="{% if request.path == '/control' %}activo{% endif %}" style="text-decoration:none; color:black;">Control de Ingresos</a></h5>
-                <h5><a href="{% url 'ctrl_planificacion' %}" class="{% if request.path == '/ctrl_planificacion' %}activo{% endif %}" style="text-decoration:none; color:black;">Planificaciones por vencer</a></h5>
+
+                <h6 class="{% if request.path == '/control' %}activo{% endif %}">
+                    <a href="{% url 'control' %}" style="text-decoration:none;">Control de Ingresos</a>
+                </h6>
+                
+                <h6 class="{% if request.path == '/ctrl_planificacion' %}activo{% endif %}">
+                    <a href="{% url 'ctrl_planificacion' %}" style="text-decoration:none;">Planificaciones por vencer</a>
+                </h6>
+
+            {% else %}
+                <h6 class="sincss">
+                </h6>
+                <h6 class="sincss">
+                </h6>
+
             {% endif %}
+
         </div>
         <div class="div2">
-            <h5>
-                <a href="{% url 'home' %}" class="{% if request.path == '/home.html' %}activo{% endif %}" style="text-decoration:none; color:black;">Home</a>
-            </h5>
+            <h6 class="{% if request.path == '/home.html' %}activo{% endif %}">
+                <a href="{% url 'home' %}" style="text-decoration:none;">Home</a>
+            </h6>
         </div>
         <div class="div3">
-            <h5><a href="{% url 'salir' %}" style="text-decoration:none; color:black;">Cerrar Sesion</a></h5>
+            <h6><a href="{% url 'salir' %}" style="text-decoration:none;">Cerrar Sesion</a></h6>
         </div>
     </header>
 
@@ -57,7 +71,7 @@
         {% block content %}{% endblock %}
 
     <footer class="footer">
-            <h3>End of The World</h3>
+            <h3>C.P.F San Juan</h3>
             <p>Instagram</p>
             <p>Linkedin</p>
             <p>CV Online</p>
