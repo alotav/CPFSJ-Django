@@ -14,13 +14,30 @@
     <title>Registro</title>
 </head>
 <body class="bodyindex">
-    <nav class="navlogin">
+
+    <header>
+        <div class="div1">
+        </div>
+        <div class="div2">
+            <h6 class="{% if request.path == '/acceder' %}activo{% endif %}">
+                <a href="{% url 'acceder' %}">Acceder</a>
+            </h6>
+        </div>
+        <div class="div3">
+            <h6>
+                <a href="{% url 'registro' %}">Registrarse</a>
+            </h6>
+        </div>
+    </header>
+
+
+    <!-- <nav class="navlogin">
         <ul>
             <li></li>
             <li><a href="{% url 'acceder' %}">Acceder</a></li>
-            <li><a href="{% url 'registro' %}">Registrarse</a></li>
+            <li></li>
         </ul>
-    </nav>
+    </nav> -->
 
     <!-- MOSTRAMOS MENSAJES FLASH -->
     {% if messages %}

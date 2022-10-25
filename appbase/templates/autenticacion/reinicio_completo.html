@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- # Bootstrap local -->
+    <link href="{% static 'appbase/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- CSS -->
+    <link href="{% static 'appbase/CSS/style.css' %}" rel="stylesheet">
+    <title>Reinicio completo</title>
+</head>
+<body>
+    <div class="contenedor_registro">
+
+        <header>
+            <div class="div1">
+            </div>
+            <div class="div2">
+                <h6>
+                    <a href="{% url 'acceder' %}">Acceder</a>
+                </h6>
+            </div>
+            <div class="div3">
+                <h6 class="{% if request.path == '/registro.html' %}activo{% endif %}">
+                    <a href="{% url 'registro' %}">Registrarse</a>
+                </h6>
+            </div>
+        </header>
+
+
+        <div class="respuesta">
+            <p>Restablecimiento de contraseña completado</p>
+
+            <p>Su contraseña ha sido establecida. Ahora puede continuar e iniciar sesión.</p>
+            
+            
+            <p>
+                <a href="{% url 'acceder' %}">Iniciar sesión</a>
+            </p>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <h3>C.P.F San Juan</h3>
+        <p>Instagram</p>
+        <p>Linkedin</p>
+        <p>CV Online</p>
+    </footer>
+
+</body>
+</html>
