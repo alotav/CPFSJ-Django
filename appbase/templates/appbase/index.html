@@ -16,7 +16,10 @@
 <body class="bodyindex">
 
     <header>
-        <div class="div1">
+        <div class="div1 cpfsj">
+            <div class="acceder">
+                
+            </div>
         </div>
         <div class="div2">
             <h6 class="{% if request.path == '/acceder' %}activo{% endif %}">
@@ -29,15 +32,6 @@
             </h6>
         </div>
     </header>
-
-
-    <!-- <nav class="navlogin">
-        <ul>
-            <li></li>
-            <li><a href="{% url 'acceder' %}">Acceder</a></li>
-            <li></li>
-        </ul>
-    </nav> -->
 
     <!-- MOSTRAMOS MENSAJES FLASH -->
     {% if messages %}
@@ -64,14 +58,14 @@
                 {{form}}
                 <button type="submit">Iniciar Sesion</button>
             </div>
+            <a href="reset_password/">Olvide mi contraseña</a>
         </form>
         {% endblock %}    
     </div> 
     <footer class="footer">
-        <h3>End of The World</h3>
-        <p>Instagram</p>
+        <h3>C.P.F San Juan</h3>
+        <p><a href="https://www.instagram.com/cpf.sanjuan/">Instagram</a></p>
         <p>Linkedin</p>
-        <p>CV Online</p>
     </footer>
 </body>
 </html>

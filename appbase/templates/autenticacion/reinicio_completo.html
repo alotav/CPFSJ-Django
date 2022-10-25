@@ -12,42 +12,22 @@
     <title>Reinicio completo</title>
 </head>
 <body>
-    <div class="contenedor_registro">
+    <div class="contenedorauth">
+        <div class="sombra">
 
-        <header>
-            <div class="div1">
+            <div class="respuesta">
+                <p>Restablecimiento de contraseña completado</p>
+
+                <p>Su contraseña ha sido establecida. Ahora puede continuar e iniciar sesión.</p>
+                
+                
+                <p>
+                    <a href="{% url 'acceder' %}">Iniciar sesión</a>
+                </p>
             </div>
-            <div class="div2">
-                <h6>
-                    <a href="{% url 'acceder' %}">Acceder</a>
-                </h6>
-            </div>
-            <div class="div3">
-                <h6 class="{% if request.path == '/registro.html' %}activo{% endif %}">
-                    <a href="{% url 'registro' %}">Registrarse</a>
-                </h6>
-            </div>
-        </header>
 
-
-        <div class="respuesta">
-            <p>Restablecimiento de contraseña completado</p>
-
-            <p>Su contraseña ha sido establecida. Ahora puede continuar e iniciar sesión.</p>
-            
-            
-            <p>
-                <a href="{% url 'acceder' %}">Iniciar sesión</a>
-            </p>
         </div>
-
     </div>
-    <footer class="footer">
-        <h3>C.P.F San Juan</h3>
-        <p>Instagram</p>
-        <p>Linkedin</p>
-        <p>CV Online</p>
-    </footer>
 
 </body>
 </html>

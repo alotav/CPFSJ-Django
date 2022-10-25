@@ -247,7 +247,8 @@ div nav {
 
 /* PLANTILLA */
 
-.bodyindex {
+.bodyindex,
+.bodyregistro {
     background: url("/static/appbase/img/login.jpg"), rgb(211, 211, 211);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -264,7 +265,7 @@ header {
     height: auto;
     width: 100%;
     border: 1px solid rgb(184, 54, 54, 0.4);
-    /* border-radius: 20px; */
+    border-radius: 5px;
     justify-content: space-between;
 }
 
@@ -382,7 +383,7 @@ header {
 .regcontainer form button {
     margin: 10px;
 }
-.regcontainer form button {
+.regcontainer form button{
     height: 5vh;
     cursor: pointer;
     background-color: rgba(184, 54, 54, 0.6);
@@ -396,12 +397,14 @@ header {
 
 .logcontainer form {
     display:flex;
+    flex-flow:column;
 }
 .logcontainer form label {
     display:table-row-group;
     padding: 25px;
 }
 .logcontainer form button {
+    /* color:rgba(255, 255, 255, 0.7)!important; */
     display: grid;
     height: 2rem;
     width: 100%;
@@ -413,19 +416,27 @@ header {
     transition: 0.3s;
 }
 .logcontainer form button:hover {
+    color:rgba(255, 255, 255, 0.7)!important;
     background-color: rgb(184, 54, 54);
     cursor: pointer;
 }
 .logcontainer form {
     background-color: rgba(255, 255, 255, 0.3);
     height: 15%;
-    padding: 3em;
+    padding: 2em 2em 1em 2em;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 5px;
 }
 .logcontainer form input {
     margin: 10px;
 }
+
+.logcontainer form a{
+    padding: 15px 0px 0px 0px;
+    text-decoration: none;
+}
+
+/* NAV LOGIN / REGISTRO*/
 
 .navlogin ul,
 .navregistro ul {
@@ -459,6 +470,9 @@ header {
     box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67);
 }
 
+
+/* RUTINAS */
+
 .detallerutina{
     color: black;
     width: auto;
@@ -482,7 +496,6 @@ header {
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
-/* PRUEBA */
     display:block;
     width: 100%;
     min-height: 105vh;
@@ -500,6 +513,10 @@ header {
     width: 100%;
     border: 1px solid rgb(184, 54, 54, 0.4);
     text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -523,10 +540,6 @@ header {
     padding-top: 5vh;
 }
 .infobasica li{
-    /* border: 1px solid rgb(184, 54, 54, 0.4);
-    padding: 1vh;
-    border-radius: 15px;
-    background-color: rgb(228, 255, 108); */
     color: rgb(214, 75, 36);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 15px;
@@ -629,25 +642,60 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-/* reset_password_complete: */
-.contenedor_registro{
-    background-color:rgb(44, 43, 43);
-    min-height:100vh;
+.acceder{
+    height:100%;
+    width:135px;
+    background: url("/static/appbase/img/CPFSJ/CPF.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    color:white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px 0px rgba(203, 203, 196, 0.67);
 }
+.cpfsj{
+    display:flex;
+    justify-content:flex-start;
+    margin:0%;
+}
+
+
+
+/* ESTILOS PARA PLANTILLAS AUTENTICACION */
+
+/* reset_password_complete: */
 
 .respuesta{
     justify-content: center;
     align-items: center;
     text-align: center;
     padding-top: 3em;
+    height: 100%;
     color:rgba(255, 255, 255, 0.7)!important;
 }
 .respuesta a{
     text-decoration: none;
     color:rgba(255, 255, 255, 0.7)!important;
     border: 1px solid rgb(102, 98, 98);
+    border-radius: 5px;
     padding: 3px;
+    cursor: pointer;
+    background-color: rgba(184, 54, 54, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+    transition: 0.3s;
 }
-.respuesta p :nth-child(1){
-    background-color: aqua;
+.respuesta a:hover{
+    background-color: rgb(184, 54, 54);
+}
+
+.contenedorauth{
+    height:100vh;
+    background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+}
+.sombra{
+    background-color:rgba(0, 0, 0, 0.75);
+    height:100%;
 }
