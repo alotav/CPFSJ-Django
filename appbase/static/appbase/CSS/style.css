@@ -695,7 +695,17 @@ input[type=number]::-webkit-outer-spin-button {
     background-attachment:fixed;
     background-size:cover;
 }
+
+.form_pwd{
+    height:100%;
+    background-color: aqua;
+}
+
 .sombra{
     background-color:rgba(0, 0, 0, 0.75);
     height:100%;
+    display:flex;
+    flex-flow:column;
+    text-align: center;
+    color:rgba(255, 255, 255, 0.7)!important;
 }
