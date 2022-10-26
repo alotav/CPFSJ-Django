@@ -9,24 +9,24 @@
     <link href="{% static 'appbase/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- CSS -->
     <link href="{% static 'appbase/CSS/style.css' %}" rel="stylesheet">
-    <title>Reinicio completo</title>
+    <title>Reinicio_pwd</title>
 </head>
 <body>
     <div class="contenedorauth">
         <div class="sombra">
 
-            <div class="respuesta">
-                <p>Restablecimiento de contraseña completado</p>
+            <div class="confirmform">
+                <form method="POST">
+                    {% csrf_token %}
 
-                <p>Su contraseña ha sido establecida. Ahora puede continuar e iniciar sesión.</p>
+                    {{form}}
+                    <input type="submit" name="Enviar correo">
+
+                </form>
                 
-                <p>
-                    <a href="{% url 'acceder' %}">Iniciar sesión</a>
-                </p>
             </div>
-
         </div>
     </div>
-
+    
 </body>
 </html>
