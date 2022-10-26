@@ -672,7 +672,8 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100%;
     color:rgba(255, 255, 255, 0.7)!important;
 }
-.respuesta a{
+.respuesta a,
+.resetform form input:nth-child(4){
     text-decoration: none;
     color:rgba(255, 255, 255, 0.7)!important;
     border: 1px solid rgb(102, 98, 98);
@@ -684,7 +685,8 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 3px;
     transition: 0.3s;
 }
-.respuesta a:hover{
+.respuesta a:hover,
+.resetform form input:nth-child(4):hover{
     background-color: rgb(184, 54, 54);
 }
 
@@ -698,7 +700,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .form_pwd{
     height:100%;
-    background-color: aqua;
+    
 }
 
 .sombra{
@@ -708,4 +710,24 @@ input[type=number]::-webkit-outer-spin-button {
     flex-flow:column;
     text-align: center;
     color:rgba(255, 255, 255, 0.7)!important;
+}
+
+.resetform{
+    height:100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.resetform form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 2em;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.resetform form input:nth-child(3){
+    margin: 5px 0px 10px 0px;
 }
