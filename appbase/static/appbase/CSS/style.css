@@ -1,7 +1,10 @@
 /* /////////////// GENERAL /////////////// */
 :root{
     --sombra: rgba(0, 0, 0, 0.7);
-
+    --color_borde: rgb(255, 255, 255);
+    --color_infobox: rgba(255, 255, 255, 0.3);
+    --color_fuente: rgba(255, 255, 255, 0.7)!important;
+    --color_hover: rgba(255, 255, 255, 0.4);
 }
 
 
@@ -15,7 +18,6 @@
 
 body{
     margin: 0px;
-    /* background: url("/static/appbase/img/abstracto.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -38,7 +40,7 @@ body{
     align-items: center;
     justify-content: center;
     border: 1vh;
-    border-color: aliceblue;
+    border-color: var(--color_borde);
     padding: 0%;
 }
 
@@ -47,7 +49,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--color_infobox);
     padding: 5px;
     border-radius: 5px;
     border-style: dashed;
@@ -56,7 +58,6 @@ body{
 
 .f label {
     padding: 5px;
-    /* margin: 5px; */
 }
 
 .submit {
@@ -73,7 +74,6 @@ body{
     margin: 0% !important;
     margin-right: 0% !important;
     padding: 0 0 0 0;
-    /*  */
     width: auto;
 }
 
@@ -113,17 +113,15 @@ body{
     align-items: center;
     font-size: 7vh;
     letter-spacing: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     text-align: center;
     color: rgb(255, 255, 255);
-    /* ancho del 100% de su contenedor */
     height: 100%;
     width: 100%;
 }
 
 .comun :hover{
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--color_hover);
     transition: 0.3s;
 }
 
@@ -136,7 +134,6 @@ body{
     background-size: 100%;
     background-attachment: fixed;
     min-height: 105vh;
-
     display:flex;
     width: 100%;
     height: auto;
@@ -159,9 +156,8 @@ body{
     height: 5.5em;
     border-radius: 5px;
     padding: 2em 3px 0px 3px;
-    /* color:rgba(255, 255, 255, 0.7)!important; */
     color: black;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--color_hover);
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .plani_vto div{
@@ -216,17 +212,15 @@ body{
     align-items: center;
     font-size: 7vh;
     letter-spacing: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     text-align: center;
     color: rgb(255, 255, 255);
-    /* ancho del 100% de su contenedor */
     height: 100%;
     width: 100%;
 }
 
 .com :hover{
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--color_hover);
     transition: 0.3s;
 }
 
@@ -250,10 +244,10 @@ div nav {
 .navar li {
     padding: 30px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--color_hover);
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(255, 255, 255, 0.4);
+    border-color: var(--color_hover);
     margin: 5vh;
     transition: 0.3s;
     color: black;
@@ -275,7 +269,6 @@ div nav {
 
 .bodyindex,
 .bodyregistro {
-    /* background: url("/static/appbase/img/login.jpg"), rgb(211, 211, 211); */
     background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
     background-repeat: no-repeat;
     background-attachment:scroll;
@@ -287,7 +280,6 @@ div nav {
 
 header {
     display: flex;
-    /* background-color: rgba(184, 54, 54, 0.683); */
     background-color: rgba(74, 26, 26, 0.9);
     height: auto;
     width: 100%;
@@ -327,7 +319,7 @@ header {
 .div3 a,
 .div2 a,
 .div1 a{
-    color:rgba(255, 255, 255, 0.7)!important;
+    color: var(--color_fuente);
     height: 100%;
     width: 100%;
     text-align: center;
@@ -363,9 +355,8 @@ header {
 .div1 h6:hover,
 .div2 h6:hover,
 .div3 h6:hover{
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color_hover);
     cursor: pointer;
-    /* background-color: rgb(102, 98, 98); */
     background-color: rgba(203, 203, 196, 0.3);
     box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67);
     width: 105%;
@@ -382,10 +373,8 @@ header {
 /* REGISTRO DJANGO */
 .regcontainer,
 .logcontainer {
-    /* background: url("/static/appbase/img/login.jpg"); */
     background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
     background-attachment:scroll;
-    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
@@ -393,16 +382,15 @@ header {
     align-items: center;
     height: auto;
     min-height: 105vh;
-    /* background-color: rgb(58, 44, 44); */
     background-color:rgba(0, 0, 0, 0.75);
     background-blend-mode:overlay;
     padding: 1vh;
 }
 .regcontainer form{
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--color_infobox);
     display: grid;
     width: 25rem;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 5px;
     align-items: center;
     text-align: center;
@@ -416,7 +404,7 @@ header {
     height: 5vh;
     cursor: pointer;
     background-color: rgba(184, 54, 54, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 3px;
     transition: 0.3s;
 }
@@ -430,31 +418,31 @@ header {
 }
 .logcontainer form label {
     display:table-row-group;
-    color:rgba(255, 255, 255, 0.7)!important;
+    color: var(--color_fuenteor);
     padding: 25px;
 }
 .logcontainer form button {
-    color:rgba(255, 255, 255, 0.7)!important;
+    color: var(--color_fuente);
     display: grid;
     height: 2rem;
     width: 100%;
     background-color: rgba(184, 54, 54, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 3px;
     padding: 3px;
     margin-top: 10px;
     transition: 0.3s;
 }
 .logcontainer form button:hover {
-    color:rgba(255, 255, 255, 0.7)!important;
+    color: var(--color_fuente);
     background-color: rgb(184, 54, 54);
     cursor: pointer;
 }
 .logcontainer form {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--color_infobox);
     height: 15%;
     padding: 2em 2em 1em 2em;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 5px;
 }
 .logcontainer form input {
@@ -478,15 +466,14 @@ header {
     justify-content: space-around;
     align-items: center;
     height: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 3px;
 }
 
 .navlogin a,
 .navregistro a {
     padding: 3px;
-    background-color: rgba(255, 255, 255, 0.3);
-    /* border: 1px solid rgba(255, 255, 255, 0.4); */
+    background-color: var(--color_infobox);
     border-radius: 3px;
     text-decoration: none;
     color: #000;
@@ -508,8 +495,6 @@ header {
     width: auto;
     text-align:center;
     margin: 0%;
-    /* border: 1px solid rgba(255, 255, 255, 0.4); */
-    /* background-color: rgba(255, 255, 255, 0.3); */
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -554,7 +539,7 @@ footer p{
     margin: 0%;
     padding: 20px;
     border: 3px;
-    border-color: rgb(255, 255, 255);
+    border-color: var(--color_borde)
 }
 
 /* PLAN */
@@ -583,14 +568,14 @@ footer p{
 }
 .infobasica li{
     color: rgb(214, 75, 36);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 5px;
     padding: 0.5vh 4vh 0.5vh 4vh;
     background-color: rgba(92, 38, 21, 0.464);
 }
 .infoplan li{
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--color_hover);
+    background-color: var(--color_infobox);
     color:rgba(255, 255, 255, 0.7);
     text-align: center;
     border-radius: 5px;
@@ -628,10 +613,10 @@ footer p{
 .form-control{
     /* display: inline-block; */
     /* color: black; */
-    color:rgba(255, 255, 255, 0.7)!important;
+    color: var(--color_fuente);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--color_infobox);
     margin: auto;
     width: auto;
     height: auto;
@@ -640,7 +625,7 @@ footer p{
     height: auto;
     cursor: pointer;
     background-color: rgba(184, 54, 54, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 4px;
     transition: 0.3s;
     margin-top: 1em;
@@ -651,7 +636,7 @@ footer p{
 .form-control input{
     height: auto;
     background-color: rgba(255, 255, 255, 0.763);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 4px;
 }
 
@@ -671,7 +656,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .username {
     color: rgb(214, 75, 36);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 15px;
     padding: 0.5vh;
     background-color: rgba(92, 37, 21, 0.962);
@@ -713,19 +698,19 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     padding-top: 3em;
     height: 100%;
-    color:rgba(255, 255, 255, 0.7)!important;
+    color: var(--color_fuente);
 }
 .respuesta a,
 .resetform form input:nth-child(4),
 .confirmform form input:nth-child(8){
     text-decoration: none;
-    color:rgba(255, 255, 255, 0.7)!important;
+    color: var(--color_fuente);
     border: 1px solid rgb(102, 98, 98);
     border-radius: 5px;
     padding: 3px;
     cursor: pointer;
     background-color: rgba(184, 54, 54, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--color_hover);
     border-radius: 3px;
     transition: 0.3s;
 }
@@ -754,7 +739,7 @@ input[type=number]::-webkit-outer-spin-button {
     display:flex;
     flex-flow:column;
     text-align: center;
-    color:rgba(255, 255, 255, 0.7)!important;
+    color: var(--color_fuente);
 }
 
 .resetform,
