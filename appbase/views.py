@@ -119,7 +119,7 @@ def home(request):
         consulta_planificacion = RutinaSemanal.objects.filter(usuario_id = id_usuario)
         for consulta in reversed(consulta_planificacion):
             f_planificacion = consulta.created
-            print(f_planificacion)
+            print(f'Planificacion creada el {f_planificacion}')
             
             # CALCULAMOS LAFECHA DE VTO DEL PLAN:
             
@@ -142,15 +142,16 @@ def home(request):
 
 
             fecha_vto = f_planificacion + timedelta(days = delta)
-            print(fecha_vto)
+            print(f'Fecha vencimiento {fecha_vto}')
             RutinaSemanal.objects.filter(usuario_id = id_usuario).update(f_vencimiento = fecha_vto)
             
             # ENVIAMOS MENSAJE DE ALERTA 5 DIAS ANTES DEL VENCIMIENTO:
             dia_actual = datetime.now()
-            print(dia_actual)
+            print(f'Dia actual {dia_actual}')
 
             # Quitamos la zona horaria que molesta para obtener la diferencia de dias
             # Tambien quitamos la hora al dia_actual, y obtenemos solo la fecha de ambos.
+            # try:
             fecha_vto = str(fecha_vto)
             fecha_vto_limpia = fecha_vto.split(' ')
             fecha_vto_limpia = fecha_vto_limpia[0]
@@ -163,7 +164,7 @@ def home(request):
             print (f'Fecha_vto limpia: {fecha_vto_limpia}')
             print (f'Fecha_vto limpia: {type(fecha_vto_limpia)}')
 
-
+            
             dia_actual = str(dia_actual)
             dia_actual_limpio = dia_actual.split(' ')
             dia_actual_limpio = dia_actual_limpio[0]
@@ -176,13 +177,18 @@ def home(request):
             print (f'Fecha_actual limpia: {dia_actual_limpio}')
             print (f'Fecha_actual limpia: {type(dia_actual_limpio)}')
 
-            diferencia = dia_actual_limpio - fecha_vto_limpia
+            diferencia = abs(dia_actual_limpio - fecha_vto_limpia)
             print(diferencia)
             # Pasamos los dias a entero:
             diferencia = str(diferencia)
-            diferencia = diferencia.split(' ')
-            diferencia = int(diferencia[0])
-            print(diferencia)
+            if diferencia != '0:00:00':
+                diferencia = diferencia.split(' ')
+                diferencia = int(diferencia[0])
+                print(diferencia)
+            else:
+                diferencia = 0
+            # except:
+            #     print('Algo salio mal')
 
             # AGREGAMOS MENSAJES PARA FECHA CERCANA AL VENCIMIENTO Y PARA PLANIFICACION VENCIDA:
 

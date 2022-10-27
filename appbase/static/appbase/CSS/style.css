@@ -1,8 +1,21 @@
 /* /////////////// GENERAL /////////////// */
+:root{
+    --sombra: rgba(0, 0, 0, 0.7);
+
+}
+
+
+
+
+
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body{
     margin: 0px;
-    background: url("/static/appbase/img/abstracto.jpg");
+    /* background: url("/static/appbase/img/abstracto.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -48,16 +61,6 @@ body{
 
 .submit {
     margin-top: 5px;
-}
-
-
-footer p{
-    display: flex;
-    justify-content: center;
-    margin: 0%;
-    padding: 20px;
-    border: 3px;
-    border-color: rgb(255, 255, 255);
 }
 
 
@@ -259,7 +262,7 @@ div nav {
 }
 .navar li:hover{
     background-color: rgba(184, 54, 54, 0.683);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 
@@ -272,9 +275,10 @@ div nav {
 
 .bodyindex,
 .bodyregistro {
-    background: url("/static/appbase/img/login.jpg"), rgb(211, 211, 211);
+    /* background: url("/static/appbase/img/login.jpg"), rgb(211, 211, 211); */
+    background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment:scroll;
     background-size: 100%;
     background-blend-mode:multiply;
     height: 100vh;
@@ -330,6 +334,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .div1 h6,
@@ -348,8 +353,6 @@ header {
     transition: 0.5s;
 }
 .div1 .sincss{
-    /* box-shadow: 3px 3px 4px 0px rgba(203, 203, 196, 0.67); */
-    /* color: white; */
     height: 100% !important;
     width: 100% !important;
     display:flex !important;
@@ -379,8 +382,10 @@ header {
 /* REGISTRO DJANGO */
 .regcontainer,
 .logcontainer {
-    background: url("/static/appbase/img/login.jpg");
-    background-attachment: fixed;
+    /* background: url("/static/appbase/img/login.jpg"); */
+    background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
+    background-attachment:scroll;
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
@@ -388,7 +393,8 @@ header {
     align-items: center;
     height: auto;
     min-height: 105vh;
-    background-color: rgb(58, 44, 44);
+    /* background-color: rgb(58, 44, 44); */
+    background-color:rgba(0, 0, 0, 0.75);
     background-blend-mode:overlay;
     padding: 1vh;
 }
@@ -424,10 +430,11 @@ header {
 }
 .logcontainer form label {
     display:table-row-group;
+    color:rgba(255, 255, 255, 0.7)!important;
     padding: 25px;
 }
 .logcontainer form button {
-    /* color:rgba(255, 255, 255, 0.7)!important; */
+    color:rgba(255, 255, 255, 0.7)!important;
     display: grid;
     height: 2rem;
     width: 100%;
@@ -541,7 +548,14 @@ header {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.3);
 }
-
+footer p{
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    padding: 20px;
+    border: 3px;
+    border-color: rgb(255, 255, 255);
+}
 
 /* PLAN */
 
@@ -550,7 +564,12 @@ header {
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
-    height: 70vh;
+    height: 75vh;
+}
+
+.divplansombra{
+    background-color: var(--sombra);
+    height: 100%;
 }
 
 .infobasica ul{
@@ -565,19 +584,17 @@ header {
 .infobasica li{
     color: rgb(214, 75, 36);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 15px;
+    border-radius: 5px;
     padding: 0.5vh 4vh 0.5vh 4vh;
-    background-color: rgba(92, 37, 21, 0.962);
+    background-color: rgba(92, 38, 21, 0.464);
 }
 .infoplan li{
     border: 1px solid rgba(255, 255, 255, 0.4);
     background-color: rgba(255, 255, 255, 0.3);
-    color: black;
+    color:rgba(255, 255, 255, 0.7);
     text-align: center;
-    border-radius: 15px;
+    border-radius: 5px;
     width: 40%;
-    /* text-align: left; */
-    /* padding-left: 40vh; */
     list-style: none;
 }
 
@@ -594,21 +611,22 @@ header {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    min-height: 85vh;
+    height: 85vh;
     margin: auto;
 }
 .control {
     margin:auto;
     padding-top: 25vh;
     color: black;
-    width: 25%;
+    width: auto;
     height: auto;
     display:flex;
     justify-content: center;
     align-items: center;
 }
+
 .form-control{
-    display: inline-block;
+    /* display: inline-block; */
     /* color: black; */
     color:rgba(255, 255, 255, 0.7)!important;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -766,4 +784,26 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .helptext li{
     text-align: left;
+}
+
+
+/* /////////////////////////////////////////////////        RESPONSIVE      ////////////////////////////////////////////// */
+
+@media only screen and (max-width: 1024px){
+    .logcontainer{
+    background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
+    background-attachment:scroll;
+    /* background-attachment: fixed; */
+    background-repeat: repeat-y;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 105vh;
+    /* background-color: rgb(58, 44, 44); */
+    background-color:rgba(0, 0, 0, 0.75);
+    background-blend-mode:overlay;
+    padding: 1vh;
+    }
 }
