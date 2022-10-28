@@ -84,14 +84,14 @@ body{
 }
 
 .dietas {
-    background:url("/static/appbase/img/dietas.jpg"),grey;
-    background-attachment: fixed;
+    background:url("/static/appbase/img/dietas3.jpg"),grey;
+    background-attachment:fixed;
     background-blend-mode: multiply;
 }
 
 .plan {
-    background: url("/static/appbase/img/plan.jpg"),grey;
-    background-attachment: fixed;
+    background: url("/static/appbase/img/plan2.jpg"),grey;
+    background-attachment:fixed;
     border: 20px;
     border-color: #000;
     background-blend-mode: multiply;
@@ -128,12 +128,12 @@ body{
 /* RUTINAS */
 
 .divrutina {
-    background: url("/static/appbase/img/rutina.jpg"), grey;
+    background: url("/static/appbase/img/rutina_semanal.jpg"), grey;
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-attachment: fixed;
-    min-height: 105vh;
+    background-attachment:fixed ;
+    min-height: 75vh;
     display:flex;
     width: 100%;
     height: auto;
@@ -172,7 +172,7 @@ body{
 }
 
 .diaria{
-    background: url("/static/appbase/img/rutina.jpg"), grey;
+    background: url("/static/appbase/img/rutina_responsive.jpg"), grey;
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -189,7 +189,7 @@ body{
 }
 
 .semanal{
-    background: url("/static/appbase/img/rutina.jpg"), grey;
+    background: url("/static/appbase/img/rutina_responsive.jpg"), grey;
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -220,7 +220,7 @@ body{
 }
 
 .com :hover{
-    background-color: var(--color_hover);
+    background-color: var(--color_infobox);
     transition: 0.3s;
 }
 
@@ -587,6 +587,7 @@ footer p{
     display: flex;
     justify-content:space-around;
     color: grey;
+    margin-bottom: 5vh;
 }
 
 /* Control de ingresos */
@@ -773,22 +774,651 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* /////////////////////////////////////////////////        RESPONSIVE      ////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////        RESPONSIVE      ////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////        RESPONSIVE      ////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////        RESPONSIVE      ////////////////////////////////////////////// */
 
-@media only screen and (max-width: 1024px){
-    .logcontainer{
-    background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
-    background-attachment:scroll;
-    /* background-attachment: fixed; */
-    background-repeat: repeat-y;
-    background-size: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    min-height: 105vh;
-    /* background-color: rgb(58, 44, 44); */
-    background-color:rgba(0, 0, 0, 0.75);
-    background-blend-mode:overlay;
-    padding: 1vh;
+@media only screen and (max-width: 950px){
+
+    body{
+        margin: 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
-}
+
+    /* /////////////// INDEX /////////////// */
+    .bindex {
+        background: url("/static/appbase/img/login.jpg"),grey;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: aliceblue;
+        height: 100rem;
+        margin: 0%;
+        padding: 0%;
+        background-blend-mode: multiply;
+    }
+
+    .dform {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1vh;
+        border-color: var(--color_borde);
+        padding: 0%;
+    }
+
+    .f {
+        margin-top: 40vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--color_infobox);
+        padding: 5px;
+        border-radius: 5px;
+        border-style: dashed;
+        border-color: azure;
+    }
+
+    .f label {
+        padding: 5px;
+    }
+
+    .submit {
+        margin-top: 5px;
+    }
+
+
+    /* /////////////// HOME /////////////// */
+
+    /* tamano del div principal */
+    .container {
+        max-width: inherit;
+        height: 105vh;
+        margin: 0% !important;
+        margin-right: 0% !important;
+        padding: 0 0 0 0;
+        width: auto;
+    }
+
+    .rutinas {
+        background:url("/static/appbase/img/rutina.jpg"),grey;
+        background-attachment: cover;
+        background-blend-mode: multiply;
+    }
+
+    .dietas {
+        background:url("/static/appbase/img/dietas3.jpg"),grey;
+        background-attachment: cover;
+        background-blend-mode: multiply;
+    }
+
+    .plan {
+        background: url("/static/appbase/img/plan.jpg"),grey;
+        background-attachment: cover;
+        border: 20px;
+        border-color: #000;
+        background-blend-mode: multiply;
+    }
+
+    /* tamano del los divs hijos 33% del div general */
+    .comun {
+        text-align: center;
+        width: 100%;
+        height: 33.4%;
+        margin-top: 0px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    .comun a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 7vh;
+        letter-spacing: 30px;
+        text-decoration: none;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        height: 100%;
+        width: 100%;
+    }
+
+    .comun :hover{
+        background-color: var(--color_hover);
+        transition: 0.3s;
+    }
+
+    /* RUTINAS */
+
+    .divrutina {
+        height: 100%;
+    }
+
+
+    /*  PLANIFICACION VTO USR */
+
+    .plani_vto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .plani_vto p{
+        border: 1px solid gray;
+        height: 5.5em;
+        border-radius: 5px;
+        padding: 2em 3px 0px 3px;
+        color: black;
+        background-color: var(--color_hover);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .plani_vto div{
+        display: flex;
+        align-self: flex-start;
+        margin: 5vh 0vh 0vh 0vh;    
+    }
+
+    /* PLANIFICACION */
+    .container_planificacion{
+        height:auto;
+    }
+
+    /* NAV */
+
+    div nav {
+        width: 25%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navar {
+        list-style: none;
+        width: auto;
+    }
+
+
+    .navar li {
+        padding: 30px;
+        text-align: center;
+        background-color: var(--color_hover);
+        border: 1px solid;
+        border-radius: 5px;
+        border-color: var(--color_hover);
+        margin: 5vh;
+        transition: 0.3s;
+        color: black;
+        /*  */
+        display: flex;
+    }
+    .navar li:hover{
+        background-color: rgba(184, 54, 54, 0.683);
+        /* cursor: pointer; */
+    }
+
+
+
+
+
+
+
+    /* PLANTILLA */
+
+    .bodyindex,
+    .bodyregistro {
+        background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
+        background-repeat: no-repeat;
+        background-attachment:scroll;
+        background-size: 100%;
+        background-blend-mode:multiply;
+        height: 100vh;
+    }
+
+
+    header {
+        display: flex;
+        background-color: rgba(74, 26, 26, 0.9);
+        height: auto;
+        width: 100%;
+        border: 1px solid rgb(184, 54, 54, 0.4);
+        border-radius: 5px;
+        justify-content: space-between;
+    }
+
+    .div1 {
+        display:flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        margin:auto;
+
+    }
+
+    .div2 {
+        display:flex;
+        width: 25%;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        text-decoration: none;
+        color: black;
+        margin:auto;
+    }
+    .div3 {
+        display:flex;
+        width: 25%;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        margin:auto;
+        transition: 0.3s;
+    }
+    .div3 a,
+    .div2 a,
+    .div1 a{
+        color: var(--color_fuente);
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .div1 h6,
+    .div2 h6,
+    .div3 h6{
+        box-shadow: 3px 3px 4px 0px rgba(203, 203, 196, 0.67);
+        color: white;
+        height: 100%;
+        width: 100%;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        border-radius: 5px;
+        height: 3rem;
+        margin:auto;
+        transition: 0.5s;
+    }
+    .div1 .sincss{
+        height: 100% !important;
+        width: 100% !important;
+        display:flex !important;
+        justify-content:center !important;
+        align-items: center !important;
+    }
+
+    .div1 h6:hover,
+    .div2 h6:hover,
+    .div3 h6:hover{
+        color: var(--color_hover);
+        cursor: pointer;
+        background-color: rgba(203, 203, 196, 0.3);
+        box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67);
+        width: 105%;
+    }
+    /* Si nos encontramos en la ruta especificada: */
+    .activo{
+        color: rgba(255, 255, 255, 0.3) !important;
+        cursor: pointer !important;
+        background-color: rgba(203, 203, 196, 0.6) !important;
+        box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67) !important;
+    }
+
+
+    /* REGISTRO DJANGO */
+    .regcontainer,
+    .logcontainer {
+        background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
+        background-attachment:scroll;
+        background-repeat: repeat-y;
+        background-size: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: auto; */
+        min-width: 500px;
+        min-height: 105vh;
+        /* background-color: rgb(58, 44, 44); */
+        background-color:rgba(0, 0, 0, 0.75);
+        background-blend-mode:overlay;
+        padding: 1vh;
+        }
+    }
+
+
+
+    .regcontainer form{
+        background-color: var(--color_infobox);
+        display: grid;
+        width: 25rem;
+        border: 1px solid var(--color_hover);
+        border-radius: 5px;
+        align-items: center;
+        text-align: center;
+    }
+    .regcontainer form label,
+    .regcontainer form input,
+    .regcontainer form button {
+        margin: 10px;
+    }
+    .regcontainer form button{
+        height: 5vh;
+        cursor: pointer;
+        background-color: rgba(184, 54, 54, 0.6);
+        border: 1px solid var(--color_hover);
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    .regcontainer form button:hover {
+        background-color: rgb(184, 54, 54);
+    }
+
+    .logcontainer form {
+        display:flex;
+        flex-flow:column;
+    }
+    .logcontainer form label {
+        display:table-row-group;
+        color: var(--color_fuenteor);
+        padding: 25px;
+    }
+    .logcontainer form button {
+        color: var(--color_fuente);
+        display: grid;
+        height: 2rem;
+        width: 100%;
+        background-color: rgba(184, 54, 54, 0.6);
+        border: 1px solid var(--color_hover);
+        border-radius: 3px;
+        padding: 3px;
+        margin-top: 10px;
+        transition: 0.3s;
+    }
+    .logcontainer form button:hover {
+        color: var(--color_fuente);
+        background-color: rgb(184, 54, 54);
+        cursor: pointer;
+    }
+    .logcontainer form {
+        background-color: var(--color_infobox);
+        height: 15%;
+        padding: 2em 2em 1em 2em;
+        border: 1px solid var(--color_hover);
+        border-radius: 5px;
+    }
+    .logcontainer form input {
+        margin: 10px;
+    }
+
+    .logcontainer form a{
+        padding: 15px 0px 0px 0px;
+        text-decoration: none;
+    }
+
+    /* NAV LOGIN / REGISTRO*/
+
+    .navlogin ul,
+    .navregistro ul {
+        list-style: none;
+        text-decoration: none;
+        background-color: rgba(74, 26, 26, 0.9);
+        margin: 0%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 3rem;
+        border: 1px solid var(--color_hover);
+        border-radius: 3px;
+    }
+
+    .navlogin a,
+    .navregistro a {
+        padding: 3px;
+        background-color: var(--color_infobox);
+        border-radius: 3px;
+        text-decoration: none;
+        color: #000;
+        box-shadow: 3px 3px 4px 0px rgba(203, 203, 196, 0.67);
+        transition: 0.4s;
+    }
+    .navregistro a:hover,
+    .navlogin a:hover {
+        background-color: rgb(102, 98, 98);
+        /* box-shadow: -3px -3px 4px 0px rgba(236, 233, 73, 0.67); */
+        box-shadow: 3px 3px 4px 0px rgba(244, 106, 68, 0.67);
+    }
+
+
+    /* RUTINAS */
+
+    .detallerutina{
+        color: black;
+        width: auto;
+        text-align:center;
+        margin: 0%;
+        border-radius: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: left;
+        justify-content: center;
+    }
+    .detallerutina p{
+        padding: 0 1rem 0 1rem;
+    }
+
+    .divdieta {
+        background: url("/static/appbase/img/dietas2.jpg"), grey;
+        background-blend-mode: multiply;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        display:block;
+        width: 100%;
+        min-height: 105vh;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .footer{
+        justify-content:center;
+        background-color: rgba(74, 26, 26, 0.9);
+        color:rgba(255, 255, 255, 0.3);
+        height:auto;
+        width: 100%;
+        border: 1px solid rgb(184, 54, 54, 0.4);
+        text-align: center;
+    }
+    .footer a{
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.3);
+    }
+    footer p{
+        display: flex;
+        justify-content: center;
+        margin: 0%;
+        padding: 20px;
+        border: 3px;
+        border-color: var(--color_borde)
+    }
+
+    /* Control de ingresos */
+
+    .container-control{
+        background: url("/static/appbase/img/control.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        height: 85vh;
+        margin: auto;
+    }
+    .control {
+        margin:auto;
+        padding-top: 25vh;
+        color: black;
+        width: auto;
+        height: auto;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-control{
+        /* display: inline-block; */
+        /* color: black; */
+        color: var(--color_fuente);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        background-color: var(--color_infobox);
+        margin: auto;
+        width: auto;
+        height: auto;
+    }
+    .form-control button{
+        height: auto;
+        cursor: pointer;
+        background-color: rgba(184, 54, 54, 0.6);
+        border: 1px solid var(--color_hover);
+        border-radius: 4px;
+        transition: 0.3s;
+        margin-top: 1em;
+    }
+    .form-control button:hover{
+        background-color: rgb(184, 54, 54);
+    }
+    .form-control input{
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.763);
+        border: 1px solid var(--color_hover);
+        border-radius: 4px;
+    }
+
+
+    .control form{
+        margin-bottom: 1vh;
+    }
+    .control button{
+        margin-bottom: 1vh;
+    }
+
+    .username {
+        color: rgb(214, 75, 36);
+        border: 1px solid var(--color_hover);
+        border-radius: 15px;
+        padding: 0.5vh;
+        background-color: rgba(92, 37, 21, 0.962);
+    }
+
+    .mensajes {
+        width: 100%;
+        height:auto;
+        text-align: center;
+        background-color: green;
+    }
+
+
+    .acceder{
+        height:100%;
+        width:135px;
+        background: url("/static/appbase/img/CPFSJ/CPF.png");
+        background-repeat: no-repeat;
+        background-size:contain;
+        color:white;
+        border-radius: 5px;
+        box-shadow: 3px 3px 4px 0px rgba(203, 203, 196, 0.67);
+    }
+    .cpfsj{
+        display:flex;
+        justify-content:flex-start;
+        margin:0%;
+    }
+
+
+
+    /* ESTILOS PARA PLANTILLAS AUTENTICACION */
+
+    /* reset_password_complete: */
+
+    .respuesta{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 3em;
+        height: 100%;
+        color: var(--color_fuente);
+    }
+    .respuesta a,
+    .resetform form input:nth-child(4),
+    .confirmform form input:nth-child(8){
+        text-decoration: none;
+        color: var(--color_fuente);
+        border: 1px solid rgb(102, 98, 98);
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+        background-color: rgba(184, 54, 54, 0.6);
+        border: 1px solid var(--color_hover);
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    .respuesta a:hover,
+    .resetform form input:nth-child(4):hover,
+    .confirmform form input:nth-child(8):hover{
+        background-color: rgb(184, 54, 54);
+    }
+
+    .contenedorauth{
+        height:100vh;
+        background: url("/static/appbase/img/CPFSJ/CPFSJ.png");
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+        background-size:cover;
+    }
+
+    .form_pwd{
+        height:100%;
+        
+    }
+
+    .sombra{
+        background-color:rgba(0, 0, 0, 0.75);
+        height:100%;
+        display:flex;
+        flex-flow:column;
+        text-align: center;
+        color: var(--color_fuente);
+    }
+
+    .resetform,
+    .confirmform{
+        height:100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .resetform form,
+    .confirmform form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 2em;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .resetform form input:nth-child(3){
+        margin: 5px 0px 10px 0px;
+    }
+
+    .confirmform form input:nth-child(8){
+        margin: 15px;
+    }
+    .helptext li{
+        text-align: left;
+    }
