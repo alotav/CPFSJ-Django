@@ -51,7 +51,7 @@ class RutinaSemanal(models.Model):
     semana7 = models.TextField(max_length=500,blank=True)
     semana8 = models.TextField(max_length=500,blank=True)
     created=models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    updated=models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated=models.DateTimeField(auto_now=True, null=True, blank=True)
     f_vencimiento = models.DateField(null=True, blank=True)
     cerca_vto = models.BooleanField(default=False)
 
@@ -89,7 +89,7 @@ class Plan(models.Model):
     doce = models.BooleanField(default=False, blank=True)
     full = models.BooleanField(default=False, blank=True)
     f_pago = models.DateField(default=False, blank=True)
-    f_vencimiento = models.DateField(null=True)
+    f_vencimiento = models.DateField(null=True, blank=True)
     asistencia = models.IntegerField(null=False, default=0)
 
     def __str__(self):

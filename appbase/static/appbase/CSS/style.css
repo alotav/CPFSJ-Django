@@ -399,6 +399,7 @@ header {
 .regcontainer form input,
 .regcontainer form button {
     margin: 10px;
+    font-weight: bold;
 }
 .regcontainer form button{
     height: 5vh;
@@ -415,10 +416,11 @@ header {
 .logcontainer form {
     display:flex;
     flex-flow:column;
+    color: var(--color_fuente);
 }
 .logcontainer form label {
     display:table-row-group;
-    color: var(--color_fuenteor);
+    color: var(--color_fuente);
     padding: 25px;
 }
 .logcontainer form button {
@@ -452,6 +454,10 @@ header {
 .logcontainer form a{
     padding: 15px 0px 0px 0px;
     text-decoration: none;
+}
+
+.logcontainer form label{
+    /* font-weight:bold; */
 }
 
 /* NAV LOGIN / REGISTRO*/
@@ -593,7 +599,7 @@ footer p{
 /* Control de ingresos */
 
 .container-control{
-    background: url("/static/appbase/img/control.jpg");
+    background: url("/static/appbase/img/control2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
@@ -767,6 +773,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .confirmform form input:nth-child(8){
     margin: 15px;
+}
+.helptext{
+    color: var(--color_fuente);
 }
 .helptext li{
     text-align: left;
@@ -1099,11 +1108,14 @@ input[type=number]::-webkit-outer-spin-button {
         border-radius: 5px;
         align-items: center;
         text-align: center;
+        color: var(--color_fuente);
+        /* font-weight:100; */
     }
     .regcontainer form label,
     .regcontainer form input,
     .regcontainer form button {
         margin: 10px;
+        font-weight:bold;
     }
     .regcontainer form button{
         height: 5vh;
@@ -1225,7 +1237,7 @@ input[type=number]::-webkit-outer-spin-button {
 
     }
 
-    .footer{
+    /* .footer{
         justify-content:center;
         background-color: rgba(74, 26, 26, 0.9);
         color:rgba(255, 255, 255, 0.3);
@@ -1245,84 +1257,25 @@ input[type=number]::-webkit-outer-spin-button {
         padding: 20px;
         border: 3px;
         border-color: var(--color_borde)
-    }
+    } */
 
-    /* Control de ingresos */
-
-    .container-control{
-        background: url("/static/appbase/img/control.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100%;
-        height: 85vh;
-        margin: auto;
-    }
-    .control {
-        margin:auto;
-        padding-top: 25vh;
-        color: black;
-        width: auto;
-        height: auto;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .form-control{
-        /* display: inline-block; */
-        /* color: black; */
-        color: var(--color_fuente);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 5px;
-        background-color: var(--color_infobox);
-        margin: auto;
-        width: auto;
-        height: auto;
-    }
-    .form-control button{
-        height: auto;
-        cursor: pointer;
-        background-color: rgba(184, 54, 54, 0.6);
-        border: 1px solid var(--color_hover);
-        border-radius: 4px;
-        transition: 0.3s;
-        margin-top: 1em;
-    }
-    .form-control button:hover{
-        background-color: rgb(184, 54, 54);
-    }
-    .form-control input{
-        height: auto;
-        background-color: rgba(255, 255, 255, 0.763);
-        border: 1px solid var(--color_hover);
-        border-radius: 4px;
-    }
-
-
-    .control form{
-        margin-bottom: 1vh;
-    }
-    .control button{
-        margin-bottom: 1vh;
-    }
-
-    .username {
+    /* .username {
         color: rgb(214, 75, 36);
         border: 1px solid var(--color_hover);
         border-radius: 15px;
         padding: 0.5vh;
         background-color: rgba(92, 37, 21, 0.962);
-    }
+    } */
 
-    .mensajes {
+    /* .mensajes {
         width: 100%;
         height:auto;
         text-align: center;
         background-color: green;
-    }
+    } */ */
 
 
-    .acceder{
+    /* .acceder{
         height:100%;
         width:135px;
         background: url("/static/appbase/img/CPFSJ/CPF.png");
@@ -1336,14 +1289,14 @@ input[type=number]::-webkit-outer-spin-button {
         display:flex;
         justify-content:flex-start;
         margin:0%;
-    }
+    } */
 
 
 
     /* ESTILOS PARA PLANTILLAS AUTENTICACION */
 
     /* reset_password_complete: */
-
+/* 
     .respuesta{
         justify-content: center;
         align-items: center;
@@ -1421,4 +1374,4 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .helptext li{
         text-align: left;
-    }
+    } */
