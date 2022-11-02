@@ -14,7 +14,10 @@ urlpatterns = [
     path('rutinas.html', views.rutinas, name='rutinas'),
     path('dietas.html', views.dietas, name='dietas'),
     path('plan.html', views.plan, name='plan'),
-    path('registro.html', views.VistaRegistro.as_view(), name="registro"),
+    # path('registro.html', views.VistaRegistro.as_view(), name="registro"),
+
+    path('registro.html', views.register_user, name="registro"),
+
     path('salir', views.cerrar_sesion, name="salir"),
     path('control', views.control, name="control"),
     path('planificacion', views.tipo_rutina, name="planificacion"),

@@ -399,7 +399,7 @@ header {
 .regcontainer form input,
 .regcontainer form button {
     margin: 10px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .regcontainer form button{
     height: 5vh;
@@ -454,10 +454,6 @@ header {
 .logcontainer form a{
     padding: 15px 0px 0px 0px;
     text-decoration: none;
-}
-
-.logcontainer form label{
-    /* font-weight:bold; */
 }
 
 /* NAV LOGIN / REGISTRO*/
@@ -1115,8 +1111,15 @@ input[type=number]::-webkit-outer-spin-button {
     .regcontainer form input,
     .regcontainer form button {
         margin: 10px;
-        font-weight:bold;
+        /* font-weight:bold; */
     }
+    .regcontainer form label,
+    .regcontainer form button {
+        margin: 10px;
+        /* font-weight:bold; */
+    }
+
+
     .regcontainer form button{
         height: 5vh;
         cursor: pointer;
@@ -1128,6 +1131,17 @@ input[type=number]::-webkit-outer-spin-button {
     .regcontainer form button:hover {
         background-color: rgb(184, 54, 54);
     }
+    
+    /* Errores de validacion en formulario registro:  */
+    .regcontainer form .errorlist{
+        color: rgba(184, 54, 54);
+        font-weight: bold;
+        background-color: rgba(203, 203, 196, 0.6);
+        border-radius: 3px;
+    }
+
+
+
 
     .logcontainer form {
         display:flex;
@@ -1272,7 +1286,7 @@ input[type=number]::-webkit-outer-spin-button {
         height:auto;
         text-align: center;
         background-color: green;
-    } */ */
+    } */ 
 
 
     /* .acceder{

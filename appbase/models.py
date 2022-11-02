@@ -1,5 +1,6 @@
 from ast import Return
 from email.policy import default
+from enum import unique
 from tabnanny import verbose
 from tkinter import CASCADE
 from unittest.util import _MAX_LENGTH
@@ -7,18 +8,18 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
-class Usuario(models.Model):
-    nombre = models.CharField(max_length=30)
-    apellido = models.CharField(max_length=30)
-    nacimiento = models.DateField()
-    pago = models.DateField()
-    vencido = models.BooleanField()
-    plan = models.CharField(max_length=4)
+# class Usuario(models.Model):
+#     nombre = models.CharField(max_length=30)
+#     apellido = models.CharField(max_length=30)
+#     nacimiento = models.DateField()
+#     pago = models.DateField()
+#     vencido = models.BooleanField()
+#     plan = models.CharField(max_length=4)
 
     # Esta clase convierte la respuesta que esta como objeto a str para que se muestren los nombres
     # de los usuarios en el panel admin:
-    def __str__(self):
-        return (f"{self.nombre}  {self.apellido}")
+    # def __str__(self):
+    #     return (f"{self.nombre}  {self.apellido}")
 
 
 # PLANIFICACION DIARIA:
@@ -83,7 +84,7 @@ class Dieta(models.Model):
 
 class Plan(models.Model):
     usr = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
-    dni = models.IntegerField(null=True, blank=False)
+    dni = models.IntegerField(null=True, blank=False, unique=True)
     fecha_nacimiento = models.DateField(null=True, blank=True)
     ocho = models.BooleanField(default=False, blank=True)
     doce = models.BooleanField(default=False, blank=True)

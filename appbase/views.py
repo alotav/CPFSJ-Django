@@ -1,17 +1,26 @@
 # from contextvars import Context
 # from dataclasses import asdict
-from django.http import Http404
+# from django.http import Http404
+from dataclasses import field
+from django import forms
 from django.shortcuts import render, redirect
 from datetime import date, timedelta, datetime
 
 from django.contrib import messages # para mostrar mensajes flash
 
-from django.contrib.auth import login, logout, authenticate # para manejar sesiones de usuarios registrados en DB
+from django.contrib.auth import login, logout, authenticate
+from django.urls import reverse_lazy # para manejar sesiones de usuarios registrados en DB
 # Importamos rutina para poder acceder a los datos de la dn a traves de una consulta ORM
-from .models import Rutina, Dieta, Plan,Usuario, RutinaSemanal
+from .models import Rutina, Dieta, Plan, RutinaSemanal
+from .forms import RegistrationForm
+
+
 from django.contrib.auth.models import User
 
-# Create your views here.
+# Importamos el formulario modificado para validacion de mail:
+
+
+
 
 # Clase basada en vista para la creacion de usuario:
 from django.views.generic import View
@@ -20,12 +29,12 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm # imp
 # La clase VistaRegistro heredara de la clase View de django:
 class VistaRegistro(View):
 
-# Mostramos el formulario del registro:
+    # Mostramos el formulario del registro:
     def get(self, request):
         form = UserCreationForm()
         return render(request, "appbase/registro.html", {"form": form}) # pasamos como parametro el formulario django
 
-# Procesamos el formulario:
+    # Procesamos el formulario:
     def post(self, request):
         # pasamos los datos del formulario por post
         form = UserCreationForm(request.POST)
@@ -40,6 +49,32 @@ class VistaRegistro(View):
         else:
             messages.error(request, 'Los datos son incorrectos!')
             return render(request, "appbase/registro.html", {"form": form})
+
+
+##############
+
+def register_user(request):
+    args = {}
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        args['form'] = form
+        if form.is_valid(): 
+            form.save()  # guardar el usuario en la base de datos si es válido
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']            
+
+            #Obtener el nombre de usuario
+            user=User.objects.get(username=username)
+
+            messages.info(request, 'Bienvenido, ya puedes ingresar a CPF SanJuan!')
+            return redirect("acceder")
+    else:
+        args['form'] = RegistrationForm()
+
+    return render(request, 'appbase/registro.html', args)
+
+##############
+
 
 def cerrar_sesion(request):
     logout(request)
