@@ -132,7 +132,7 @@ body{
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-attachment:fixed ;
+    background-attachment:cover ;
     min-height: 75vh;
     display:flex;
     width: 100%;
@@ -596,8 +596,8 @@ footer p{
 
 .container-control{
     background: url("/static/appbase/img/control2.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
     background-size: 100%;
     height: 85vh;
     margin: auto;
@@ -614,8 +614,6 @@ footer p{
 }
 
 .form-control{
-    /* display: inline-block; */
-    /* color: black; */
     color: var(--color_fuente);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
@@ -785,15 +783,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media only screen and (max-width: 950px){
 
-    body{
+    /* body{
         margin: 0px;
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
-    }
+    } */
+
 
     /* /////////////// INDEX /////////////// */
-    .bindex {
+    /* .bindex {
         background: url("/static/appbase/img/login.jpg"),grey;
         background-repeat: no-repeat;
         background-size: 100%;
@@ -802,18 +801,18 @@ input[type=number]::-webkit-outer-spin-button {
         margin: 0%;
         padding: 0%;
         background-blend-mode: multiply;
-    }
+    } */
 
-    .dform {
+    /* .dform {
         display: flex;
         align-items: center;
         justify-content: center;
         border: 1vh;
         border-color: var(--color_borde);
         padding: 0%;
-    }
+    } */
 
-    .f {
+    /* .f {
         margin-top: 40vh;
         display: flex;
         flex-direction: column;
@@ -823,31 +822,32 @@ input[type=number]::-webkit-outer-spin-button {
         border-radius: 5px;
         border-style: dashed;
         border-color: azure;
-    }
+    } */
 
-    .f label {
+    /* .f label {
         padding: 5px;
     }
 
     .submit {
         margin-top: 5px;
-    }
+    } */
 
 
     /* /////////////// HOME /////////////// */
 
     /* tamano del div principal */
-    .container {
+    /* .container {
         max-width: inherit;
         height: 105vh;
         margin: 0% !important;
         margin-right: 0% !important;
         padding: 0 0 0 0;
         width: auto;
-    }
+    } */
 
     .rutinas {
-        background:url("/static/appbase/img/rutina.jpg"),grey;
+        background:url("/static/appbase/img/rutina2.jpg"),grey;
+        background-size: cover;
         background-attachment: cover;
         background-blend-mode: multiply;
     }
@@ -881,7 +881,7 @@ input[type=number]::-webkit-outer-spin-button {
         justify-content: center;
         align-items: center;
         font-size: 7vh;
-        letter-spacing: 30px;
+        letter-spacing: 15px;
         text-decoration: none;
         text-align: center;
         color: rgb(255, 255, 255);
@@ -893,13 +893,39 @@ input[type=number]::-webkit-outer-spin-button {
         background-color: var(--color_hover);
         transition: 0.3s;
     }
-
+    
     /* RUTINAS */
 
     .divrutina {
+        background: url("/static/appbase/img/rutina_semanal2.jpg"), grey;
+        background-blend-mode: multiply;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment:cover ;
+        min-height: 75vh;
+        display:flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
         height: 100%;
     }
 
+
+    /* Control de ingresos */
+
+    .container-control{
+        background: url("/static/appbase/img/control2.jpg");
+        background-repeat:round;
+        background-attachment:fixed;
+        background-size: 100%;
+        height: 85vh;
+        margin: auto;
+    }
+
+    /* ///////////////////////////////////////// HASTA ACA CHEQUEADO ///////////////////////////////////////// */
+
+    
 
     /*  PLANIFICACION VTO USR */
 
@@ -928,6 +954,52 @@ input[type=number]::-webkit-outer-spin-button {
     .container_planificacion{
         height:auto;
     }
+
+    .diaria{
+        background: url("/static/appbase/img/rutina_responsive2.jpg"), grey;
+        background-blend-mode: multiply;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment:cover;
+        min-height: auto;
+    
+        display:block;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        height: 50vh;
+    }
+    
+    .semanal{
+        background: url("/static/appbase/img/rutina_responsive2b.jpg"), grey;
+        background-blend-mode: multiply;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment:cover;
+        min-height: auto;
+    
+        display:block;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        height: 50vh;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* NAV */
 
