@@ -8,20 +8,6 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
-# class Usuario(models.Model):
-#     nombre = models.CharField(max_length=30)
-#     apellido = models.CharField(max_length=30)
-#     nacimiento = models.DateField()
-#     pago = models.DateField()
-#     vencido = models.BooleanField()
-#     plan = models.CharField(max_length=4)
-
-    # Esta clase convierte la respuesta que esta como objeto a str para que se muestren los nombres
-    # de los usuarios en el panel admin:
-    # def __str__(self):
-    #     return (f"{self.nombre}  {self.apellido}")
-
-
 # PLANIFICACION DIARIA:
 class Rutina(models.Model):
     # Creamos la relacion entre rutinas tabla usuario django Auth_User que importamos arrriba:
