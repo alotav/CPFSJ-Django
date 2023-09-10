@@ -9,11 +9,11 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     # path('', views.index, name='index'),
-    path('acceder', views.acceder, name='acceder'),
-    path('home.html', views.home, name='home'),
-    path('rutinas.html', views.rutinas, name='rutinas'),
-    path('dietas.html', views.dietas, name='dietas'),
-    path('plan.html', views.plan, name='plan'),
+    path('', views.acceder, name='acceder'),
+    path('home', views.home, name='home'),
+    path('rutinas', views.rutinas, name='rutinas'),
+    path('dietas', views.dietas, name='dietas'),
+    path('plan', views.plan, name='plan'),
     # path('registro.html', views.VistaRegistro.as_view(), name="registro"),
 
     path('registro.html', views.register_user, name="registro"),
